@@ -209,6 +209,7 @@ export const translations = {
     nav: {
       home: 'Home',
       services: 'Services',
+      products: 'Products',
       about: 'About Us',
       contact: 'Contact',
       cta: 'Book a call',
