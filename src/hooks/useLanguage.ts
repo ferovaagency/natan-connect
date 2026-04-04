@@ -18,6 +18,7 @@ export function useLanguage() {
       const routeMap: Record<string, string> = {
         '/': '/en',
         '/servicios': '/en/services',
+        '/productos': '/en/products',
         '/quienes-somos': '/en/about',
         '/contacto': '/en/contact',
         '/admin': '/admin',
