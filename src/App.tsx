@@ -10,6 +10,8 @@ import ScrollToTop from "@/components/layout/ScrollToTop";
 import AIChatWidget from "@/components/layout/AIChatWidget";
 import HomePage from "@/pages/HomePage";
 import ServiciosPage from "@/pages/ServiciosPage";
+import ProductosPage from "@/pages/ProductosPage";
+import AutoFilmPolarizados from "@/pages/products/AutoFilmPolarizados";
 import QuienesSomosPage from "@/pages/QuienesSomosPage";
 import ContactoPage from "@/pages/ContactoPage";
 import AdminPage from "@/pages/AdminPage";
