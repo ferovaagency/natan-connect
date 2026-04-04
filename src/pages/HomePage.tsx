@@ -1,97 +1,152 @@
 import { Link } from 'react-router-dom';
 import { useLanguage } from '@/hooks/useLanguage';
+import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent } from '@/components/ui/card';
-import { Briefcase, Globe, TrendingUp, Users, Car, HeartPulse, GraduationCap, UtensilsCrossed, Landmark, Leaf } from 'lucide-react';
+import { Car, HeartPulse, GraduationCap, UtensilsCrossed, Landmark, Leaf, TrendingDown, FileWarning, Clock, ArrowRight } from 'lucide-react';
 
 const sectorIcons = [Car, HeartPulse, Landmark, GraduationCap, UtensilsCrossed, Leaf];
-const valueIcons = [Briefcase, Globe, TrendingUp, Users];
+const painIcons = [TrendingDown, FileWarning, Clock];
 
 const HomePage = () => {
   const { t, getPath } = useLanguage();
+  useScrollAnimation();
 
   return (
     <div className="min-h-screen">
       {/* Hero */}
-      <section className="relative min-h-screen flex items-center justify-center bg-primary overflow-hidden">
-        {/* Geometric decorations */}
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-20 left-10 w-40 h-40 border-2 border-secondary rotate-45" />
-          <div className="absolute bottom-32 right-20 w-60 h-60 border border-secondary rotate-12" />
-          <div className="absolute top-1/2 left-1/3 w-20 h-20 bg-secondary/20 rotate-45" />
-          <div className="absolute top-1/4 right-1/4 w-32 h-32 border border-primary-foreground/20 rotate-45" />
+      <section className="relative min-h-screen flex items-center justify-center gradient-primary overflow-hidden">
+        {/* Floating diamonds */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute top-[15%] left-[8%] w-24 h-24 border border-primary-foreground/10 rotate-45 animate-float-diamond" />
+          <div className="absolute top-[60%] right-[12%] w-40 h-40 border border-primary-foreground/10 rotate-45 animate-float-diamond-slow" />
+          <div className="absolute top-[30%] right-[30%] w-16 h-16 bg-primary-foreground/5 rotate-45 animate-float-diamond-fast" />
+          <div className="absolute bottom-[20%] left-[25%] w-32 h-32 border border-secondary/10 rotate-45 animate-float-diamond-slow" />
+          <div className="absolute top-[10%] right-[8%] w-20 h-20 bg-secondary/5 rotate-45 animate-float-diamond" />
         </div>
 
-        <div className="container mx-auto px-4 text-center relative z-10">
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-heading font-bold text-primary-foreground mb-6 leading-tight animate-fade-in-up">
+        <div className="container mx-auto px-4 text-center relative z-10 max-w-4xl">
+          <h1 className="text-4xl md:text-5xl lg:text-[3.5rem] font-heading font-bold text-primary-foreground mb-2 leading-tight animate-fade-in-up">
             {t.hero.title}
           </h1>
-          <p className="text-lg md:text-xl text-primary-foreground/80 font-body max-w-2xl mx-auto mb-8 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
+          <p className="text-4xl md:text-5xl lg:text-[3.5rem] font-heading font-bold text-secondary mb-8 animate-fade-in-up" style={{ animationDelay: '0.15s' }}>
+            {t.hero.titleHighlight}
+          </p>
+          <p className="text-lg md:text-xl text-primary-foreground/80 font-body max-w-2xl mx-auto mb-10 animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
             {t.hero.subtitle}
           </p>
-          <Link to={getPath('/contacto')}>
-            <Button className="bg-secondary text-secondary-foreground hover:bg-secondary/90 font-heading text-lg px-8 py-6 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
-              {t.hero.cta}
-            </Button>
-          </Link>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up" style={{ animationDelay: '0.45s' }}>
+            <Link to={getPath('/contacto')}>
+              <Button className="bg-secondary text-secondary-foreground hover:bg-secondary/90 font-heading text-lg px-8 py-6 btn-hover">
+                {t.hero.cta}
+              </Button>
+            </Link>
+            <Link to={getPath('/servicios')}>
+              <Button variant="outline" className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 font-heading text-lg px-8 py-6 btn-hover">
+                {t.hero.ctaSecondary}
+              </Button>
+            </Link>
+          </div>
         </div>
 
-        {/* Bottom diagonal */}
-        <div className="absolute bottom-0 left-0 right-0 h-20 bg-background" style={{ clipPath: 'polygon(0 100%, 100% 100%, 100% 0)' }} />
+        {/* Bottom curve */}
+        <div className="absolute bottom-0 left-0 right-0">
+          <svg viewBox="0 0 1440 80" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full">
+            <path d="M0 80L1440 80L1440 30C1440 30 1080 0 720 0C360 0 0 30 0 30L0 80Z" fill="hsl(210 40% 98%)" />
+          </svg>
+        </div>
       </section>
 
-      {/* What We Do */}
-      <section className="py-20 bg-background">
+      {/* Pain Points */}
+      <section className="py-24 bg-background">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground text-center mb-6">
-            {t.whatWeDo.title}
+          <h2 className="text-foreground text-center mb-16 animate-on-scroll">
+            {t.painPoints.title}
           </h2>
-          <p className="text-muted-foreground font-body max-w-3xl mx-auto text-center text-lg leading-relaxed">
-            {t.whatWeDo.description}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto mb-12">
+            {t.painPoints.items.map((item, i) => {
+              const Icon = painIcons[i];
+              return (
+                <div key={i} className="glass-card rounded-2xl p-8 card-hover animate-on-scroll" style={{ transitionDelay: `${i * 0.1}s` }}>
+                  <div className="w-14 h-14 rounded-xl bg-destructive/10 flex items-center justify-center mb-5">
+                    <Icon className="w-7 h-7 text-destructive" />
+                  </div>
+                  <h3 className="font-heading text-foreground mb-3">{item.title}</h3>
+                  <p className="text-muted-foreground font-body leading-relaxed">{item.description}</p>
+                </div>
+              );
+            })}
+          </div>
+          <p className="text-center text-lg font-body text-muted-foreground max-w-2xl mx-auto animate-on-scroll">
+            {t.painPoints.resolution}
           </p>
         </div>
       </section>
 
-      {/* Values */}
-      <section className="py-20 bg-muted/50">
+      {/* How We Help */}
+      <section className="py-24 bg-muted/50">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground text-center mb-12">
-            {t.values.title}
+          <h2 className="text-foreground text-center mb-16 animate-on-scroll">
+            {t.howWeHelp.title}
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {t.values.items.map((item, i) => {
-              const Icon = valueIcons[i];
-              return (
-                <Card key={i} className="border-border bg-card hover:shadow-lg transition-shadow group">
-                  <CardContent className="p-6 text-center">
-                    <div className="w-14 h-14 bg-secondary/10 rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:bg-secondary/20 transition-colors">
-                      <Icon className="w-7 h-7 text-secondary" />
-                    </div>
-                    <h3 className="font-heading font-semibold text-foreground mb-2">{item.title}</h3>
-                    <p className="text-sm text-muted-foreground font-body">{item.description}</p>
-                  </CardContent>
-                </Card>
-              );
-            })}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            {t.howWeHelp.steps.map((step, i) => (
+              <div key={i} className="relative animate-on-scroll" style={{ transitionDelay: `${i * 0.15}s` }}>
+                <div className="glass-card rounded-2xl p-8 card-hover h-full">
+                  <span className="text-6xl font-heading font-bold text-secondary/15 absolute top-4 right-6">{step.number}</span>
+                  <div className="relative z-10">
+                    <h3 className="font-heading text-foreground mb-3 text-xl">{step.title}</h3>
+                    <p className="text-muted-foreground font-body leading-relaxed">{step.description}</p>
+                  </div>
+                </div>
+                {i < 2 && (
+                  <div className="hidden md:flex absolute -right-6 top-1/2 -translate-y-1/2 z-20">
+                    <ArrowRight className="w-6 h-6 text-secondary" />
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Social Proof */}
+      <section className="py-24 gradient-primary relative overflow-hidden">
+        <div className="absolute top-10 right-10 w-32 h-32 border border-primary-foreground/5 rotate-45 animate-float-diamond-slow" />
+        <div className="container mx-auto px-4 relative z-10">
+          <h2 className="text-primary-foreground text-center mb-16 animate-on-scroll">
+            {t.socialProof.title}
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-4xl mx-auto">
+            {t.socialProof.stats.map((stat, i) => (
+              <div key={i} className="text-center animate-on-scroll" style={{ transitionDelay: `${i * 0.1}s` }}>
+                <p className="text-4xl md:text-5xl font-heading font-bold text-secondary mb-3">{stat.value}</p>
+                <p className="text-primary-foreground/70 font-body">{stat.label}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
       {/* Sectors */}
-      <section className="py-20 bg-background">
+      <section className="py-24 bg-background">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground text-center mb-12">
+          <h2 className="text-foreground text-center mb-16 animate-on-scroll">
             {t.sectors.title}
           </h2>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
             {t.sectors.items.map((sector, i) => {
               const Icon = sectorIcons[i];
               return (
-                <div key={i} className="flex flex-col items-center p-6 bg-card border border-border rounded-xl hover:border-secondary/50 hover:shadow-md transition-all group">
-                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-3 group-hover:bg-secondary/10 transition-colors">
-                    <Icon className="w-6 h-6 text-primary group-hover:text-secondary transition-colors" />
+                <div key={i} className="glass-card rounded-2xl p-6 card-hover group animate-on-scroll" style={{ transitionDelay: `${i * 0.08}s` }}>
+                  <div className="flex items-center gap-4">
+                    <div className="w-14 h-14 rounded-xl bg-primary/5 flex items-center justify-center group-hover:bg-secondary/10 transition-colors shrink-0">
+                      <Icon className="w-7 h-7 text-primary group-hover:text-secondary transition-colors" />
+                    </div>
+                    <div>
+                      <h3 className="font-heading font-semibold text-foreground text-lg">{sector.name}</h3>
+                      <p className="text-sm text-muted-foreground font-body">{sector.description}</p>
+                    </div>
                   </div>
-                  <span className="text-sm font-heading font-medium text-foreground text-center">{sector}</span>
                 </div>
               );
             })}
@@ -100,20 +155,20 @@ const HomePage = () => {
       </section>
 
       {/* CTA */}
-      <section className="py-20 bg-primary relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-10 right-10 w-40 h-40 border border-secondary rotate-45" />
-          <div className="absolute bottom-10 left-10 w-32 h-32 border border-primary-foreground/20 rotate-12" />
+      <section className="py-24 gradient-teal relative overflow-hidden">
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute top-10 left-10 w-32 h-32 border border-primary-foreground/10 rotate-45 animate-float-diamond-slow" />
+          <div className="absolute bottom-10 right-20 w-24 h-24 border border-primary-foreground/10 rotate-45 animate-float-diamond" />
         </div>
-        <div className="container mx-auto px-4 text-center relative z-10">
-          <h2 className="text-3xl md:text-4xl font-heading font-bold text-primary-foreground mb-4">
+        <div className="container mx-auto px-4 text-center relative z-10 animate-on-scroll">
+          <h2 className="text-primary-foreground mb-4">
             {t.ctaSection.title}
           </h2>
-          <p className="text-primary-foreground/70 font-body max-w-2xl mx-auto mb-8 text-lg">
+          <p className="text-primary-foreground/80 font-body max-w-xl mx-auto mb-10 text-lg">
             {t.ctaSection.subtitle}
           </p>
           <Link to={getPath('/contacto')}>
-            <Button className="bg-secondary text-secondary-foreground hover:bg-secondary/90 font-heading text-lg px-8 py-6">
+            <Button className="bg-primary-foreground text-primary hover:bg-primary-foreground/90 font-heading text-lg px-10 py-6 btn-hover">
               {t.ctaSection.cta}
             </Button>
           </Link>
