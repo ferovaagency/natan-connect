@@ -28,6 +28,7 @@ export function useLanguage() {
       const routeMap: Record<string, string> = {
         '/en': '/',
         '/en/services': '/servicios',
+        '/en/products': '/productos',
         '/en/about': '/quienes-somos',
         '/en/contact': '/contacto',
       };
