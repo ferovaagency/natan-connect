@@ -1,5 +1,5 @@
 import { useLocation, useNavigate } from 'react-router-dom';
-import { translations, type Language, type TranslationKeys } from '@/lib/i18n';
+import { translations, type Language } from '@/lib/i18n';
 import { useCallback, useMemo } from 'react';
 
 export function useLanguage() {
