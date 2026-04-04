@@ -41,6 +41,7 @@ export function useLanguage() {
       const map: Record<string, string> = {
         '/': '/en',
         '/servicios': '/en/services',
+        '/productos': '/en/products',
         '/quienes-somos': '/en/about',
         '/contacto': '/en/contact',
       };

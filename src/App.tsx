@@ -32,12 +32,16 @@ const App = () => (
             {/* Spanish routes */}
             <Route path="/" element={<HomePage />} />
             <Route path="/servicios" element={<ServiciosPage />} />
+            <Route path="/productos" element={<ProductosPage />} />
+            <Route path="/productos/polarizados-nanocermicos-autofilm" element={<AutoFilmPolarizados />} />
             <Route path="/quienes-somos" element={<QuienesSomosPage />} />
             <Route path="/contacto" element={<ContactoPage />} />
 
             {/* English routes */}
             <Route path="/en" element={<HomePage />} />
             <Route path="/en/services" element={<ServiciosPage />} />
+            <Route path="/en/products" element={<ProductosPage />} />
+            <Route path="/en/products/nano-ceramic-tinting-autofilm" element={<AutoFilmPolarizados />} />
             <Route path="/en/about" element={<QuienesSomosPage />} />
             <Route path="/en/contact" element={<ContactoPage />} />
 
