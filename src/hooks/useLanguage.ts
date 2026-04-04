@@ -10,7 +10,7 @@ export function useLanguage() {
     return location.pathname.startsWith('/en') ? 'en' : 'es';
   }, [location.pathname]);
 
-  const t: TranslationKeys = useMemo(() => translations[lang], [lang]);
+  const t = useMemo(() => translations[lang], [lang]);
 
   const toggleLanguage = useCallback(() => {
     const path = location.pathname;
