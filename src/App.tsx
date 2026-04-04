@@ -10,6 +10,8 @@ import ScrollToTop from "@/components/layout/ScrollToTop";
 import AIChatWidget from "@/components/layout/AIChatWidget";
 import HomePage from "@/pages/HomePage";
 import ServiciosPage from "@/pages/ServiciosPage";
+import ProductosPage from "@/pages/ProductosPage";
+import AutoFilmPolarizados from "@/pages/products/AutoFilmPolarizados";
 import QuienesSomosPage from "@/pages/QuienesSomosPage";
 import ContactoPage from "@/pages/ContactoPage";
 import AdminPage from "@/pages/AdminPage";
@@ -30,12 +32,16 @@ const App = () => (
             {/* Spanish routes */}
             <Route path="/" element={<HomePage />} />
             <Route path="/servicios" element={<ServiciosPage />} />
+            <Route path="/productos" element={<ProductosPage />} />
+            <Route path="/productos/polarizados-nanocermicos-autofilm" element={<AutoFilmPolarizados />} />
             <Route path="/quienes-somos" element={<QuienesSomosPage />} />
             <Route path="/contacto" element={<ContactoPage />} />
 
             {/* English routes */}
             <Route path="/en" element={<HomePage />} />
             <Route path="/en/services" element={<ServiciosPage />} />
+            <Route path="/en/products" element={<ProductosPage />} />
+            <Route path="/en/products/nano-ceramic-tinting-autofilm" element={<AutoFilmPolarizados />} />
             <Route path="/en/about" element={<QuienesSomosPage />} />
             <Route path="/en/contact" element={<ContactoPage />} />
 

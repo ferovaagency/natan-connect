@@ -5,6 +5,7 @@ export const translations = {
     nav: {
       home: 'Inicio',
       services: 'Servicios',
+      products: 'Productos',
       about: 'Quiénes Somos',
       contact: 'Contacto',
       cta: 'Agendar consulta',
@@ -208,6 +209,7 @@ export const translations = {
     nav: {
       home: 'Home',
       services: 'Services',
+      products: 'Products',
       about: 'About Us',
       contact: 'Contact',
       cta: 'Book a call',
