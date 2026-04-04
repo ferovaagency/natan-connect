@@ -3,8 +3,17 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
-import Index from "./pages/Index.tsx";
-import NotFound from "./pages/NotFound.tsx";
+import Header from "@/components/layout/Header";
+import Footer from "@/components/layout/Footer";
+import WhatsAppButton from "@/components/layout/WhatsAppButton";
+import ScrollToTop from "@/components/layout/ScrollToTop";
+import AIChatWidget from "@/components/layout/AIChatWidget";
+import HomePage from "@/pages/HomePage";
+import ServiciosPage from "@/pages/ServiciosPage";
+import QuienesSomosPage from "@/pages/QuienesSomosPage";
+import ContactoPage from "@/pages/ContactoPage";
+import AdminPage from "@/pages/AdminPage";
+import NotFound from "@/pages/NotFound";
 
 const queryClient = new QueryClient();
 
@@ -14,11 +23,31 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Index />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-          <Route path="*" element={<NotFound />} />
-        </Routes>
+        <ScrollToTop />
+        <Header />
+        <main>
+          <Routes>
+            {/* Spanish routes */}
+            <Route path="/" element={<HomePage />} />
+            <Route path="/servicios" element={<ServiciosPage />} />
+            <Route path="/quienes-somos" element={<QuienesSomosPage />} />
+            <Route path="/contacto" element={<ContactoPage />} />
+
+            {/* English routes */}
+            <Route path="/en" element={<HomePage />} />
+            <Route path="/en/services" element={<ServiciosPage />} />
+            <Route path="/en/about" element={<QuienesSomosPage />} />
+            <Route path="/en/contact" element={<ContactoPage />} />
+
+            {/* Admin */}
+            <Route path="/admin" element={<AdminPage />} />
+
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </main>
+        <Footer />
+        <WhatsAppButton />
+        <AIChatWidget />
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
