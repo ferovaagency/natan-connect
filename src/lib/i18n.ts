@@ -166,10 +166,10 @@ export const translations = {
       },
       info: {
         title: 'Información de Contacto',
-        address: 'Cra. 20 # 137-67, Bogotá, Colombia',
-        phones: ['+57 1 8043262', '+57 310 560 7188'],
+        address: '',
+        phones: ['+57 310 560 7188'],
         whatsapp: '+57 310 560 7188',
-        email: 'info@natancommercial.com',
+        email: 'almanzaag@gmail.com',
       },
     },
     footer: {
@@ -370,10 +370,10 @@ export const translations = {
       },
       info: {
         title: 'Contact Information',
-        address: 'Cra. 20 # 137-67, Bogotá, Colombia',
-        phones: ['+57 1 8043262', '+57 310 560 7188'],
+        address: '',
+        phones: ['+57 310 560 7188'],
         whatsapp: '+57 310 560 7188',
-        email: 'info@natancommercial.com',
+        email: 'almanzaag@gmail.com',
       },
     },
     footer: {
