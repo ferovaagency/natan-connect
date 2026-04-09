@@ -26,7 +26,6 @@ const HomePage = () => {
             height={1080}
           />
         </div>
-        </div>
 
         {/* Floating diamonds */}
         <div className="absolute inset-0 z-10 overflow-hidden">
