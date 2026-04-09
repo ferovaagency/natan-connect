@@ -2,9 +2,9 @@ import { Link } from 'react-router-dom';
 import { useLanguage } from '@/hooks/useLanguage';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import { Button } from '@/components/ui/button';
-import { Car, HeartPulse, GraduationCap, UtensilsCrossed, Landmark, Leaf, TrendingDown, FileWarning, Clock, ArrowRight } from 'lucide-react';
+import { HeartPulse, Cpu, Car, HandHeart, GraduationCap, Plus, TrendingDown, FileWarning, Clock, ArrowRight } from 'lucide-react';
 
-const sectorIcons = [Car, HeartPulse, Landmark, GraduationCap, UtensilsCrossed, Leaf];
+const sectorIcons = [HeartPulse, Cpu, Car, HandHeart, GraduationCap, Plus];
 const painIcons = [TrendingDown, FileWarning, Clock];
 
 const HomePage = () => {

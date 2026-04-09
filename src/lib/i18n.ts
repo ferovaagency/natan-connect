@@ -45,12 +45,12 @@ export const translations = {
     sectors: {
       title: 'Sectores donde generamos impacto',
       items: [
-        { name: 'Automotriz', description: 'Distribución y comercialización de marcas internacionales.' },
         { name: 'Salud', description: 'Equipos médicos, farmacéutica y servicios de bienestar.' },
-        { name: 'Exequial', description: 'Servicios funerarios y de previsión exequial.' },
+        { name: 'Tecnología', description: 'Soluciones tecnológicas e innovación digital.' },
+        { name: 'Automotriz', description: 'Distribución y comercialización de marcas internacionales.' },
+        { name: 'Solidario', description: 'Servicios sociales y de previsión comunitaria.' },
         { name: 'Educativo', description: 'Tecnología educativa y programas académicos.' },
-        { name: 'Alimentos', description: 'Productos alimenticios y franquicias gastronómicas.' },
-        { name: 'Agrícola-Minero', description: 'Maquinaria, insumos y tecnología para el agro.' },
+        { name: 'Y más...', description: 'Exploramos oportunidades en múltiples industrias.' },
       ],
     },
     ctaSection: {
@@ -249,12 +249,12 @@ export const translations = {
     sectors: {
       title: 'Sectors where we make an impact',
       items: [
-        { name: 'Automotive', description: 'Distribution and commercialization of international brands.' },
         { name: 'Healthcare', description: 'Medical equipment, pharmaceuticals and wellness services.' },
-        { name: 'Funeral Services', description: 'Funeral and pre-need services.' },
+        { name: 'Technology', description: 'Tech solutions and digital innovation.' },
+        { name: 'Automotive', description: 'Distribution and commercialization of international brands.' },
+        { name: 'Social Sector', description: 'Social and community welfare services.' },
         { name: 'Education', description: 'Educational technology and academic programs.' },
-        { name: 'Food & Beverage', description: 'Food products and gastronomic franchises.' },
-        { name: 'Agriculture & Mining', description: 'Machinery, supplies and agricultural technology.' },
+        { name: 'And more...', description: 'We explore opportunities across multiple industries.' },
       ],
     },
     ctaSection: {
