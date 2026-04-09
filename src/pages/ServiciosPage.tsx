@@ -3,6 +3,7 @@ import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import { Card, CardContent } from '@/components/ui/card';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { CheckCircle, Target, BarChart3, Headphones, Clock } from 'lucide-react';
+import servicesHero from '@/assets/services-hero.jpg';
 
 const diffIcons = [CheckCircle, Target, BarChart3, Headphones];
 
@@ -14,12 +15,15 @@ const ServiciosPage = () => {
     <div className="min-h-screen pt-20">
       {/* Hero */}
       <section className="py-24 gradient-primary relative overflow-hidden">
+        <div className="absolute inset-0">
+          <img src={servicesHero} alt="" className="w-full h-full object-cover opacity-10" width={1920} height={768} />
+        </div>
         <div className="absolute top-10 right-20 w-40 h-40 border border-primary-foreground/5 rotate-45 animate-float-diamond-slow" />
         <div className="container mx-auto px-4 text-center relative z-10 max-w-3xl">
           <h1 className="text-primary-foreground mb-6 animate-fade-in-up">
             {t.services.title}
           </h1>
-          <p className="text-lg text-primary-foreground/70 font-body animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
+          <p className="text-lg text-white/80 font-body animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
             {t.services.subtitle}
           </p>
         </div>

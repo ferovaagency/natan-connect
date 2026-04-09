@@ -3,6 +3,7 @@ import { useLanguage } from '@/hooks/useLanguage';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import { Button } from '@/components/ui/button';
 import { HeartPulse, Cpu, Car, HandHeart, GraduationCap, Plus, TrendingDown, FileWarning, Clock, ArrowRight } from 'lucide-react';
+import heroBg from '@/assets/hero-business.jpg';
 
 const sectorIcons = [HeartPulse, Cpu, Car, HandHeart, GraduationCap, Plus];
 const painIcons = [TrendingDown, FileWarning, Clock];
@@ -18,9 +19,11 @@ const HomePage = () => {
         {/* Background image */}
         <div className="absolute inset-0 z-0">
           <img
-            src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1920&q=80"
+            src={heroBg}
             alt=""
             className="w-full h-full object-cover opacity-15 blur-sm scale-105"
+            width={1920}
+            height={1080}
           />
         </div>
 
@@ -157,7 +160,7 @@ const HomePage = () => {
             {t.socialProof.stats.map((stat, i) => (
               <div key={i} className="text-center animate-on-scroll" style={{ transitionDelay: `${i * 0.1}s` }}>
                 <p className="text-3xl md:text-4xl font-heading font-bold text-secondary mb-3">{stat.value}</p>
-                <p className="text-primary-foreground/70 font-body">{stat.label}</p>
+                <p className="text-white/90 font-body text-sm">{stat.label}</p>
               </div>
             ))}
           </div>

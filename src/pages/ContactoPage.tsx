@@ -54,7 +54,7 @@ const ContactoPage = () => {
           <h1 className="text-primary-foreground mb-4 animate-fade-in-up">
             {t.contact.title}
           </h1>
-          <p className="text-lg text-primary-foreground/70 font-body animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
+          <p className="text-lg text-white/80 font-body animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
             {t.contact.subtitle}
           </p>
         </div>
