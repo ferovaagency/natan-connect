@@ -19,8 +19,11 @@ const Footer = () => {
           {/* Brand */}
           <div>
             <div className="mb-4">
-              <span className="text-2xl font-heading font-bold tracking-tight">NATAN</span>
-              <p className="text-[10px] font-heading font-medium tracking-widest uppercase text-secondary">Commercial Agency</p>
+              <img 
+                src="/logo.png" 
+                alt="NATAN Commercial Agency" 
+                className="h-10 w-auto brightness-0 invert mb-4"
+              />
             </div>
             <p className="text-sm text-primary-foreground/60 font-body leading-relaxed">
               {t.footer.description}
