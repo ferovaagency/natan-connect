@@ -19,6 +19,7 @@ const ServiciosPage = () => {
           <img src={servicesHero} alt="" className="w-full h-full object-cover opacity-10" width={1920} height={768} />
         </div>
         <div className="absolute top-10 right-20 w-40 h-40 border border-primary-foreground/5 rotate-45 animate-float-diamond-slow" />
+        <div className="container mx-auto px-4 text-center relative z-10 max-w-3xl">
           <h1 className="text-primary-foreground mb-6 animate-fade-in-up">
             {t.services.title}
           </h1>

@@ -25,8 +25,7 @@ const HomePage = () => {
             width={1920}
             height={1080}
           />
-            className="w-full h-full object-cover opacity-15 blur-sm scale-105"
-          />
+        </div>
         </div>
 
         {/* Floating diamonds */}

@@ -52,7 +52,6 @@ const QuienesSomosPage = () => {
                     width={512}
                     height={512}
                   />
-                  />
                 </div>
               </div>
               <div>
