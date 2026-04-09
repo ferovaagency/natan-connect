@@ -2,6 +2,7 @@ import { useLanguage } from '@/hooks/useLanguage';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { Shield, Heart, Star, Users, Award, Target } from 'lucide-react';
+import leaderImg from '@/assets/leader-portrait.jpg';
 
 const valueIcons = [Shield, Heart, Star, Users, Award, Target];
 
@@ -44,9 +45,13 @@ const QuienesSomosPage = () => {
               <div className="shrink-0">
                 <div className="w-36 h-36 rounded-full overflow-hidden ring-4 ring-secondary/20">
                   <img
-                    src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&h=400&fit=crop&crop=face"
+                    src={leaderImg}
                     alt={t.about.leader.name}
                     className="w-full h-full object-cover"
+                    loading="lazy"
+                    width={512}
+                    height={512}
+                  />
                   />
                 </div>
               </div>

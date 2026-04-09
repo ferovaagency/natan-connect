@@ -3,6 +3,7 @@ import { useLanguage } from '@/hooks/useLanguage';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import { Button } from '@/components/ui/button';
 import { HeartPulse, Cpu, Car, HandHeart, GraduationCap, Plus, TrendingDown, FileWarning, Clock, ArrowRight } from 'lucide-react';
+import heroBg from '@/assets/hero-business.jpg';
 
 const sectorIcons = [HeartPulse, Cpu, Car, HandHeart, GraduationCap, Plus];
 const painIcons = [TrendingDown, FileWarning, Clock];
@@ -18,8 +19,12 @@ const HomePage = () => {
         {/* Background image */}
         <div className="absolute inset-0 z-0">
           <img
-            src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1920&q=80"
+            src={heroBg}
             alt=""
+            className="w-full h-full object-cover opacity-15 blur-sm scale-105"
+            width={1920}
+            height={1080}
+          />
             className="w-full h-full object-cover opacity-15 blur-sm scale-105"
           />
         </div>
