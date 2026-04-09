@@ -23,7 +23,7 @@ const Footer = () => {
               <img 
                 src={logo} 
                 alt="NATAN Commercial Agency" 
-                className="h-10 w-auto brightness-0 invert mb-4"
+                className="h-10 w-auto"
               />
             </div>
             <p className="text-sm text-primary-foreground/60 font-body leading-relaxed">
