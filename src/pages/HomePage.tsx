@@ -177,12 +177,12 @@ const HomePage = () => {
             {t.sectors.items.map((sector, i) => {
               const Icon = sectorIcons[i];
               return (
-                <div key={i} className="glass-card rounded-2xl p-6 card-hover group animate-on-scroll" style={{ transitionDelay: `${i * 0.08}s` }}>
-                  <div className="flex items-center gap-4">
+                <div key={i} className="glass-card rounded-2xl p-6 card-hover group animate-on-scroll h-full" style={{ transitionDelay: `${i * 0.08}s` }}>
+                  <div className="flex items-start gap-4">
                     <div className="w-14 h-14 rounded-xl bg-primary/5 flex items-center justify-center group-hover:bg-secondary/10 transition-colors shrink-0">
                       <Icon className="w-7 h-7 text-primary group-hover:text-secondary transition-colors" />
                     </div>
-                    <div>
+                    <div className="min-h-[4rem]">
                       <h3 className="font-heading font-semibold text-foreground text-lg">{sector.name}</h3>
                       <p className="text-sm text-muted-foreground font-body">{sector.description}</p>
                     </div>
@@ -198,14 +198,8 @@ const HomePage = () => {
       <section className="py-24 bg-muted/30">
         <div className="container mx-auto px-4 max-w-4xl animate-on-scroll">
           <div className="text-center mb-12">
-            <div className="inline-block bg-secondary/10 rounded-full px-6 py-2 mb-4">
-              <span className="text-secondary font-heading font-semibold text-sm uppercase tracking-widest">
-                {t.results.title}
-              </span>
-            </div>
-            <h2 className="text-foreground text-4xl md:text-5xl font-heading font-bold mb-4">
-              {t.results.title.split(' ').slice(0, -2).join(' ')}{' '}
-              <span className="text-secondary">{t.results.title.split(' ').slice(-2).join(' ')}</span>
+            <h2 className="text-foreground font-heading font-bold mb-4">
+              {t.results.title}
             </h2>
             <p className="text-muted-foreground font-body text-lg leading-relaxed max-w-2xl mx-auto">
               {t.results.subtitle}
@@ -213,7 +207,7 @@ const HomePage = () => {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {t.results.items.map((item, i) => (
-              <div key={i} className="glass-card rounded-2xl p-6 card-hover text-center animate-on-scroll" style={{ transitionDelay: `${i * 0.1}s` }}>
+              <div key={i} className="glass-card rounded-2xl p-8 card-hover text-center animate-on-scroll flex flex-col items-center" style={{ transitionDelay: `${i * 0.1}s` }}>
                 <p className="text-4xl font-heading font-bold text-secondary mb-3">{item.number}</p>
                 <h3 className="font-heading font-semibold text-foreground mb-2">{item.title}</h3>
                 <p className="text-sm text-muted-foreground font-body leading-relaxed">{item.description}</p>
