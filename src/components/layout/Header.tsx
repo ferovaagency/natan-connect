@@ -33,7 +33,7 @@ const Header = () => {
       <div className="container mx-auto px-4 py-4 flex items-center justify-between">
         <Link to={getPath('/')} className="flex items-center">
           <img 
-            src="/logo.png" 
+            src={logo} 
             alt="NATAN Commercial Agency" 
             className={`h-10 w-auto transition-all duration-300 ${
               scrolled ? 'brightness-100' : 'brightness-0 invert'

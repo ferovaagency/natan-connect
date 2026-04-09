@@ -21,7 +21,7 @@ const Footer = () => {
           <div>
             <div className="mb-4">
               <img 
-                src="/logo.png" 
+                src={logo} 
                 alt="NATAN Commercial Agency" 
                 className="h-10 w-auto brightness-0 invert mb-4"
               />
