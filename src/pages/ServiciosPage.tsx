@@ -19,7 +19,7 @@ const ServiciosPage = () => {
           <h1 className="text-primary-foreground mb-6 animate-fade-in-up">
             {t.services.title}
           </h1>
-          <p className="text-lg text-primary-foreground/70 font-body animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
+          <p className="text-lg text-white/80 font-body animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
             {t.services.subtitle}
           </p>
         </div>

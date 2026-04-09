@@ -157,7 +157,7 @@ const HomePage = () => {
             {t.socialProof.stats.map((stat, i) => (
               <div key={i} className="text-center animate-on-scroll" style={{ transitionDelay: `${i * 0.1}s` }}>
                 <p className="text-3xl md:text-4xl font-heading font-bold text-secondary mb-3">{stat.value}</p>
-                <p className="text-primary-foreground/70 font-body">{stat.label}</p>
+                <p className="text-white/90 font-body text-sm">{stat.label}</p>
               </div>
             ))}
           </div>
