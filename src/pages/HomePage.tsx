@@ -15,8 +15,17 @@ const HomePage = () => {
     <div className="min-h-screen">
       {/* Hero */}
       <section className="relative min-h-screen flex items-center justify-center gradient-primary overflow-hidden">
+        {/* Background image */}
+        <div className="absolute inset-0 z-0">
+          <img
+            src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1920&q=80"
+            alt=""
+            className="w-full h-full object-cover opacity-15 blur-sm scale-105"
+          />
+        </div>
+
         {/* Floating diamonds */}
-        <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute inset-0 z-10 overflow-hidden">
           <div className="absolute top-[15%] left-[8%] w-24 h-24 border border-primary-foreground/10 rotate-45 animate-float-diamond" />
           <div className="absolute top-[60%] right-[12%] w-40 h-40 border border-primary-foreground/10 rotate-45 animate-float-diamond-slow" />
           <div className="absolute top-[30%] right-[30%] w-16 h-16 bg-primary-foreground/5 rotate-45 animate-float-diamond-fast" />
@@ -24,7 +33,7 @@ const HomePage = () => {
           <div className="absolute top-[10%] right-[8%] w-20 h-20 bg-secondary/5 rotate-45 animate-float-diamond" />
         </div>
 
-        <div className="container mx-auto px-4 text-center relative z-10 max-w-4xl">
+        <div className="container mx-auto px-4 text-center relative z-20 max-w-4xl">
           <h1 className="text-4xl md:text-5xl lg:text-[3.5rem] font-heading font-bold text-primary-foreground mb-2 leading-tight animate-fade-in-up">
             {t.hero.title}
           </h1>
@@ -41,7 +50,7 @@ const HomePage = () => {
               </Button>
             </Link>
             <Link to={getPath('/servicios')}>
-              <Button variant="outline" className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 font-heading text-lg px-8 py-6 btn-hover">
+              <Button variant="outline" className="border-white/60 text-white bg-white/10 hover:bg-white/20 font-heading text-lg px-8 py-6 btn-hover">
                 {t.hero.ctaSecondary}
               </Button>
             </Link>
@@ -49,7 +58,7 @@ const HomePage = () => {
         </div>
 
         {/* Bottom curve */}
-        <div className="absolute bottom-0 left-0 right-0">
+        <div className="absolute bottom-0 left-0 right-0 z-20">
           <svg viewBox="0 0 1440 80" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full">
             <path d="M0 80L1440 80L1440 30C1440 30 1080 0 720 0C360 0 0 30 0 30L0 80Z" fill="hsl(210 40% 98%)" />
           </svg>
@@ -79,6 +88,34 @@ const HomePage = () => {
           <p className="text-center text-lg font-body text-muted-foreground max-w-2xl mx-auto animate-on-scroll">
             {t.painPoints.resolution}
           </p>
+        </div>
+      </section>
+
+      {/* Photo gallery */}
+      <section className="py-16 bg-background overflow-hidden">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div className="relative rounded-2xl overflow-hidden h-48 md:h-64">
+              <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&q=80"
+                alt="Expansión regional" className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
+              <div className="absolute inset-0 gradient-primary opacity-40" />
+            </div>
+            <div className="relative rounded-2xl overflow-hidden h-48 md:h-64 md:mt-8">
+              <img src="https://images.unsplash.com/photo-1573164713988-8665fc963095?w=600&q=80"
+                alt="Reunión de negocios" className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
+              <div className="absolute inset-0 gradient-primary opacity-40" />
+            </div>
+            <div className="relative rounded-2xl overflow-hidden h-48 md:h-64">
+              <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=600&q=80"
+                alt="Latam" className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
+              <div className="absolute inset-0 gradient-primary opacity-40" />
+            </div>
+            <div className="relative rounded-2xl overflow-hidden h-48 md:h-64 md:mt-8">
+              <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=600&q=80"
+                alt="Equipo" className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
+              <div className="absolute inset-0 gradient-primary opacity-40" />
+            </div>
+          </div>
         </div>
       </section>
 
@@ -119,7 +156,7 @@ const HomePage = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-4xl mx-auto">
             {t.socialProof.stats.map((stat, i) => (
               <div key={i} className="text-center animate-on-scroll" style={{ transitionDelay: `${i * 0.1}s` }}>
-                <p className="text-4xl md:text-5xl font-heading font-bold text-secondary mb-3">{stat.value}</p>
+                <p className="text-3xl md:text-4xl font-heading font-bold text-secondary mb-3">{stat.value}</p>
                 <p className="text-primary-foreground/70 font-body">{stat.label}</p>
               </div>
             ))}
@@ -150,6 +187,35 @@ const HomePage = () => {
                 </div>
               );
             })}
+          </div>
+        </div>
+      </section>
+
+      {/* Results / Ganamos sobre resultados */}
+      <section className="py-24 bg-muted/30">
+        <div className="container mx-auto px-4 max-w-4xl animate-on-scroll">
+          <div className="text-center mb-12">
+            <div className="inline-block bg-secondary/10 rounded-full px-6 py-2 mb-4">
+              <span className="text-secondary font-heading font-semibold text-sm uppercase tracking-widest">
+                {t.results.title}
+              </span>
+            </div>
+            <h2 className="text-foreground text-4xl md:text-5xl font-heading font-bold mb-4">
+              {t.results.title.split(' ').slice(0, -2).join(' ')}{' '}
+              <span className="text-secondary">{t.results.title.split(' ').slice(-2).join(' ')}</span>
+            </h2>
+            <p className="text-muted-foreground font-body text-lg leading-relaxed max-w-2xl mx-auto">
+              {t.results.subtitle}
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {t.results.items.map((item, i) => (
+              <div key={i} className="glass-card rounded-2xl p-6 card-hover text-center animate-on-scroll" style={{ transitionDelay: `${i * 0.1}s` }}>
+                <p className="text-4xl font-heading font-bold text-secondary mb-3">{item.number}</p>
+                <h3 className="font-heading font-semibold text-foreground mb-2">{item.title}</h3>
+                <p className="text-sm text-muted-foreground font-body leading-relaxed">{item.description}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
