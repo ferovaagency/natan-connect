@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { useLanguage } from '@/hooks/useLanguage';
 import { MapPin, Phone, Mail } from 'lucide-react';
+import logo from '@/assets/logo.png';
 
 const Footer = () => {
   const { t, getPath } = useLanguage();
