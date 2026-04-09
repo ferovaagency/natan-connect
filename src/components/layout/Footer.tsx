@@ -51,10 +51,6 @@ const Footer = () => {
           <div>
             <h4 className="font-heading font-semibold mb-6 text-lg">{t.footer.contactInfo}</h4>
             <div className="flex flex-col gap-4 text-sm text-primary-foreground/60 font-body">
-              <div className="flex items-start gap-3">
-                <MapPin className="w-4 h-4 mt-0.5 text-secondary shrink-0" />
-                <span>{t.contact.info.address}</span>
-              </div>
               <div className="flex items-center gap-3">
                 <Phone className="w-4 h-4 text-secondary shrink-0" />
                 <span>{t.contact.info.phones[0]}</span>
