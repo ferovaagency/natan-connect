@@ -13,7 +13,7 @@ const QuienesSomosPage = () => {
   return (
     <div className="min-h-screen pt-0 mt-0">
       {/* Hero */}
-      <section className="py-24 gradient-primary relative overflow-hidden">
+      <section className="py-24 gradient-primary relative overflow-hidden mt-[96px]">
         <div className="absolute top-10 right-20 w-40 h-40 border border-primary-foreground/5 rotate-45 animate-float-diamond-slow" />
         <div className="container mx-auto px-4 text-center relative z-10 max-w-3xl">
           <h1 className="text-primary-foreground mb-4 animate-fade-in-up">
