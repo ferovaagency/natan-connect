@@ -28,7 +28,7 @@ const Header = () => {
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
       scrolled
         ? 'bg-background/95 backdrop-blur-md shadow-lg border-b border-border/50'
-        : 'bg-transparent'
+        : 'bg-dark/80 backdrop-blur-md'
     }`}>
       <div className="container mx-auto px-4 py-4 flex items-center justify-between">
         <Link to={getPath('/')} className="flex items-center">

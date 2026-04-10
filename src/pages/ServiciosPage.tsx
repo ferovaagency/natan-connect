@@ -8,7 +8,7 @@ import servicesHero from '@/assets/services-hero.jpg';
 const diffIcons = [CheckCircle, Target, BarChart3, Headphones];
 
 const ServiciosPage = () => {
-  const { t } = useLanguage();
+  const { t, lang } = useLanguage();
   useScrollAnimation();
 
   return (
@@ -16,7 +16,7 @@ const ServiciosPage = () => {
       {/* Hero */}
       <section className="py-24 gradient-primary relative overflow-hidden">
         <div className="absolute inset-0">
-          <img src={servicesHero} alt="" className="w-full h-full object-cover opacity-10" width={1920} height={768} />
+          <img src={servicesHero} alt="" className="w-full h-full object-cover opacity-30" width={1920} height={768} />
         </div>
         <div className="absolute top-10 right-20 w-40 h-40 border border-primary-foreground/5 rotate-45 animate-float-diamond-slow" />
         <div className="container mx-auto px-4 text-center relative z-10 max-w-3xl">
@@ -75,6 +75,51 @@ const ServiciosPage = () => {
               </AccordionItem>
             ))}
           </Accordion>
+        </div>
+      </section>
+
+      {/* Valores Agregados */}
+      <section className="py-16 bg-background">
+        <div className="container mx-auto px-4 max-w-5xl">
+          <h2 className="text-foreground text-center mb-12 animate-on-scroll">
+            {lang === 'es' ? 'Valores agregados' : 'Added Value'}
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {[
+              lang === 'es'
+                ? 'Conocimiento profundo del mercado y sector a tratar'
+                : 'Deep knowledge of the target market and sector',
+              lang === 'es'
+                ? 'Relaciones preestablecidas en mercados objetivos, organismos oficiales y empresas públicas'
+                : 'Pre-established relationships in target markets, official bodies and public companies',
+              lang === 'es'
+                ? 'Generamos estructuras empresariales de amplio crecimiento, no de mantenimiento'
+                : 'We build high-growth business structures, not maintenance ones',
+              lang === 'es'
+                ? 'Gestión basada en minimizar riesgos y maximizar utilidades'
+                : 'Management focused on minimizing risks and maximizing profits',
+              lang === 'es'
+                ? 'Enfocados: no pretendemos hacer más de lo que sabemos hacer'
+                : 'Focused: we do not pretend to do more than what we know how to do',
+              lang === 'es'
+                ? 'Mantenemos las políticas e imagen de las marcas que representamos'
+                : 'We maintain the policies and image of the brands we represent',
+              lang === 'es'
+                ? 'Generamos reducción de costos operativos por ser una empresa externa especializada'
+                : 'We generate cost reduction by operating as an external specialized firm',
+              lang === 'es'
+                ? 'Orientamos de forma correcta y sustentada la decisión de inversión en un territorio determinado'
+                : 'We correctly and substantively guide investment decisions in a given territory',
+            ].map((item, i) => (
+              <div key={i} className="flex items-start gap-4 glass-card rounded-xl p-5 card-hover animate-on-scroll"
+                style={{ transitionDelay: `${i * 0.06}s` }}>
+                <div className="w-8 h-8 rounded-full bg-secondary/15 flex items-center justify-center shrink-0 mt-0.5">
+                  <span className="text-secondary font-heading font-bold text-sm">{i + 1}</span>
+                </div>
+                <p className="text-muted-foreground font-body leading-relaxed text-sm">{item}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 

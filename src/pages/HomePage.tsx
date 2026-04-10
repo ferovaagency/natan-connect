@@ -21,7 +21,7 @@ const HomePage = () => {
           <img
             src={heroBg}
             alt=""
-            className="w-full h-full object-cover opacity-15 blur-sm scale-105"
+            className="w-full h-full object-cover opacity-30 blur-sm scale-105"
             width={1920}
             height={1080}
           />
@@ -156,11 +156,11 @@ const HomePage = () => {
           <h2 className="text-primary-foreground text-center mb-16 animate-on-scroll">
             {t.socialProof.title}
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
             {t.socialProof.stats.map((stat, i) => (
-              <div key={i} className="text-center animate-on-scroll" style={{ transitionDelay: `${i * 0.1}s` }}>
-                <p className="text-3xl md:text-4xl font-heading font-bold text-secondary mb-3">{stat.value}</p>
-                <p className="text-white/90 font-body text-sm">{stat.label}</p>
+              <div key={i} className="text-center bg-white/5 rounded-2xl p-6 animate-on-scroll" style={{ transitionDelay: `${i * 0.1}s` }}>
+                <p className="text-2xl md:text-3xl font-heading font-bold text-secondary mb-3">{stat.value}</p>
+                <p className="text-white/90 font-body text-xs md:text-sm">{stat.label}</p>
               </div>
             ))}
           </div>
@@ -190,29 +190,6 @@ const HomePage = () => {
                 </div>
               );
             })}
-          </div>
-        </div>
-      </section>
-
-      {/* Results / Ganamos sobre resultados */}
-      <section className="py-24 bg-muted/30">
-        <div className="container mx-auto px-4 max-w-4xl animate-on-scroll">
-          <div className="text-center mb-12">
-            <h2 className="text-foreground font-heading font-bold mb-4">
-              {t.results.title}
-            </h2>
-            <p className="text-muted-foreground font-body text-lg leading-relaxed max-w-2xl mx-auto">
-              {t.results.subtitle}
-            </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {t.results.items.map((item, i) => (
-              <div key={i} className="glass-card rounded-2xl p-8 card-hover text-center animate-on-scroll flex flex-col items-center" style={{ transitionDelay: `${i * 0.1}s` }}>
-                <p className="text-4xl font-heading font-bold text-secondary mb-3">{item.number}</p>
-                <h3 className="font-heading font-semibold text-foreground mb-2">{item.title}</h3>
-                <p className="text-sm text-muted-foreground font-body leading-relaxed">{item.description}</p>
-              </div>
-            ))}
           </div>
         </div>
       </section>

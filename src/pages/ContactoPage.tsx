@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { supabase } from '@/lib/supabase';
-import { MapPin, Phone, MessageCircle, Mail, CheckCircle } from 'lucide-react';
+import { Phone, MessageCircle, Mail, CheckCircle } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 
 const ContactoPage = () => {
@@ -91,12 +91,6 @@ const ContactoPage = () => {
               <div>
                 <h2 className="text-xl font-heading font-bold text-foreground mb-6">{t.contact.info.title}</h2>
                 <div className="space-y-5 font-body">
-                  <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-xl bg-secondary/10 flex items-center justify-center shrink-0">
-                      <MapPin className="w-5 h-5 text-secondary" />
-                    </div>
-                    <span className="text-muted-foreground pt-2">{t.contact.info.address}</span>
-                  </div>
                   <div className="flex items-start gap-4">
                     <div className="w-10 h-10 rounded-xl bg-secondary/10 flex items-center justify-center shrink-0">
                       <Mail className="w-5 h-5 text-secondary" />
