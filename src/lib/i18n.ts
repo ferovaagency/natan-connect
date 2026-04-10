@@ -13,7 +13,7 @@ export const translations = {
     hero: {
       title: 'Tu empresa ya está lista para Latinoamérica.',
       titleHighlight: 'Nosotros abrimos la puerta.',
-      subtitle: 'Conectamos marcas con los mercados de Colombia, Latinoamérica y Norteamérica. ty6 resultados.',
+      subtitle: 'Conectamos marcas con los mercados de Colombia, Latinoamérica y Norteamérica. Sin riesgos. Con resultados.',
       cta: 'Agendar Asesoría',
       ctaSecondary: 'Ver cómo trabajamos',
     },
