@@ -49,7 +49,7 @@ const ContactoPage = () => {
   return (
     <div className="min-h-screen pt-0 mt-0">
       {/* Hero */}
-      <section className="py-16 gradient-primary relative overflow-hidden px-0">
+      <section className="py-16 gradient-primary relative overflow-hidden px-0 mt-[64px]">
         <div className="container mx-auto px-4 text-center relative z-10 max-w-3xl">
           <h1 className="text-primary-foreground mb-4 animate-fade-in-up">
             {t.contact.title}

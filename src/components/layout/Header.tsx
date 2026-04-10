@@ -30,7 +30,7 @@ const Header = () => {
         ? 'bg-background/95 backdrop-blur-md shadow-lg border-b border-border/50'
         : 'bg-dark/80 backdrop-blur-md border-b border-transparent'
     }`}>
-      <div className="container mx-auto px-4 py-4 flex items-center justify-between">
+      <div className="container mx-auto px-4 py-4 flex items-center justify-between mb-[50px]">
         <Link to={getPath('/')} className="flex items-center">
           <img 
             src={logo} 
