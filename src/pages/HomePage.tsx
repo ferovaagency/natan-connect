@@ -159,8 +159,12 @@ const HomePage = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
             {t.socialProof.stats.map((stat, i) => (
               <div key={i} className="text-center bg-white/5 rounded-2xl p-6 animate-on-scroll" style={{ transitionDelay: `${i * 0.1}s` }}>
-                <p className="text-2xl md:text-3xl font-heading font-bold text-secondary mb-3">{stat.value}</p>
-                <p className="text-white/90 font-body text-xs md:text-sm">{stat.label}</p>
+                <p className="text-2xl md:text-3xl font-heading font-bold text-secondary mb-2 leading-tight">
+                  {stat.value}
+                </p>
+                <p className="text-white/70 font-body text-xs md:text-sm leading-relaxed">
+                  {stat.label}
+                </p>
               </div>
             ))}
           </div>

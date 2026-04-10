@@ -37,9 +37,9 @@ export const translations = {
     socialProof: {
       title: 'Experiencia que respalda cada proyecto',
       stats: [
-        { value: '18 años', label: 'de experiencia en mercados Latam' },
-        { value: 'Salud · Tech · Automotriz · Solidario · Educativo', label: 'sectores donde generamos impacto' },
-        { value: 'Colombia · Latam · USA · y más', label: 'cobertura de mercado' },
+        { value: '18 años', label: 'de experiencia en mercados Latam, Centroamérica y Norteamérica' },
+        { value: '5 sectores', label: 'Salud · Tecnología · Automotriz · Solidario · Educativo' },
+        { value: '3 regiones', label: 'Colombia · Latinoamérica · Estados Unidos · y más' },
       ],
     },
     sectors: {
@@ -273,9 +273,9 @@ export const translations = {
     socialProof: {
       title: 'Experience that backs every project',
       stats: [
-        { value: '18 years', label: 'of experience in Latam markets' },
-        { value: 'Health · Tech · Auto · Social · Education', label: 'sectors where we make an impact' },
-        { value: 'Colombia · Latam · USA · and more', label: 'market coverage' },
+        { value: '18 years', label: 'of experience in Latam, Central America and North America' },
+        { value: '5 sectors', label: 'Health · Technology · Automotive · Social · Education' },
+        { value: '3 regions', label: 'Colombia · Latin America · United States · and more' },
       ],
     },
     sectors: {
