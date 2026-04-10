@@ -47,7 +47,7 @@ const ContactoPage = () => {
   };
 
   return (
-    <div className="min-h-screen pt-20">
+    <div className="min-h-screen pt-0 mt-0">
       {/* Hero */}
       <section className="py-16 gradient-primary relative overflow-hidden">
         <div className="container mx-auto px-4 text-center relative z-10 max-w-3xl">

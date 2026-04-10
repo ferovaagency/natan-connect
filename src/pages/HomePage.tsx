@@ -17,14 +17,8 @@ const HomePage = () => {
       {/* Hero */}
       <section className="relative min-h-screen flex items-center justify-center gradient-primary overflow-hidden">
         {/* Background image */}
-        <div className="absolute inset-0 z-0">
-          <img
-            src={heroBg}
-            alt=""
-            className="w-full h-full object-cover opacity-30 blur-sm scale-105"
-            width={1920}
-            height={1080}
-          />
+        <div className="absolute inset-0">
+          <img src={heroBg} alt="" className="w-full h-full object-cover opacity-30" width={1920} height={1080} />
         </div>
 
         {/* Floating diamonds */}
