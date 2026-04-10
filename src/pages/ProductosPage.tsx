@@ -25,7 +25,7 @@ const ProductosPage = () => {
   return (
     <div className="min-h-screen bg-[#0F172A]">
       {/* Hero */}
-      <section className="relative pt-32 pb-20 px-4 overflow-hidden">
+      <section className="relative pt-20 pb-20 px-4 overflow-hidden">
         {/* Decorative dots */}
         <div className="absolute inset-0 opacity-[0.03]" style={{
           backgroundImage: 'radial-gradient(circle, #00B4D8 1px, transparent 1px)',

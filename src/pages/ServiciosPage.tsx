@@ -12,7 +12,7 @@ const ServiciosPage = () => {
   useScrollAnimation();
 
   return (
-    <div className="min-h-screen pt-20">
+    <div className="min-h-screen pt-0 mt-0">
       {/* Hero */}
       <section className="py-24 gradient-primary relative overflow-hidden">
         <div className="absolute inset-0">

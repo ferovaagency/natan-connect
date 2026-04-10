@@ -11,7 +11,7 @@ const QuienesSomosPage = () => {
   useScrollAnimation();
 
   return (
-    <div className="min-h-screen pt-20">
+    <div className="min-h-screen pt-0 mt-0">
       {/* Hero */}
       <section className="py-24 gradient-primary relative overflow-hidden">
         <div className="absolute top-10 right-20 w-40 h-40 border border-primary-foreground/5 rotate-45 animate-float-diamond-slow" />
