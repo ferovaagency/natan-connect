@@ -116,15 +116,15 @@ const ProjectsPage = () => {
             {/* Text left */}
             <div className="order-2 lg:order-1">
               <span className="text-secondary font-heading font-semibold text-sm uppercase tracking-wider">
-                {isEs ? 'Proyecto Activo' : 'Active Project'}
+                {isEs ? 'Proyecto Activo · Servicios Navidad' : 'Active Project · Christmas Services'}
               </span>
               <h2 className="font-heading font-bold text-2xl md:text-4xl text-white mt-2 mb-4">
-                {isEs ? 'Árboles Natan — Servicios Navidad' : 'Árboles Natan — Christmas Services'}
+                {isEs ? 'Árboles Natan — Árbol LED de Navidad' : 'Árboles Natan — LED Christmas Tree'}
               </h2>
               <p className="text-slate-400 text-lg mb-6 leading-relaxed">
                 {isEs
-                  ? 'Soluciones de iluminación navideña de alto impacto para espacios públicos y privados. Árboles LED de 12 metros, sonido 360° y máquina de nieve para transformar plazas y parques en destinos navideños memorables.'
-                  : 'High-impact Christmas lighting solutions for public and private spaces. 12-meter LED trees, 360° sound and snow machines to transform plazas and parks into memorable Christmas destinations.'}
+                  ? 'Instalaciones de alto impacto visual que transforman plazas y parques en destinos navideños memorables. Árbol LED de 12 metros, sonido 360° y máquina de nieve.'
+                  : 'High visual impact installations that transform plazas and parks into memorable Christmas destinations. 12-meter LED tree, 360° sound and snow machine.'}
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
                 {[
@@ -164,8 +164,8 @@ const ProjectsPage = () => {
             {/* Image right */}
             <div className="order-1 lg:order-2 relative">
               <img
-                src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=800&q=80"
-                alt={isEs ? 'Árbol LED navideño' : 'LED Christmas tree'}
+                src="/lovable-uploads/arboles-natan-5.jpg"
+                alt={isEs ? 'Árbol LED de Navidad' : 'LED Christmas Tree'}
                 className="w-full rounded-2xl shadow-lg object-cover aspect-[4/3]"
                 loading="lazy"
               />
@@ -173,14 +173,14 @@ const ProjectsPage = () => {
               {/* Image grid */}
               <div className="grid grid-cols-2 gap-4 mt-4">
                 <img
-                  src="https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?w=800&q=80"
-                  alt={isEs ? 'Naturaleza y sostenibilidad' : 'Nature and sustainability'}
+                  src="/lovable-uploads/arboles-natan-1.jpg"
+                  alt={isEs ? 'Árbol LED parque' : 'LED tree park'}
                   className="w-full rounded-xl object-cover aspect-[3/2]"
                   loading="lazy"
                 />
                 <img
-                  src="https://images.unsplash.com/photo-1448375240586-882707db888b?w=800&q=80"
-                  alt={isEs ? 'Árboles Colombia' : 'Trees Colombia'}
+                  src="/lovable-uploads/arboles-natan-3.jpg"
+                  alt={isEs ? 'Caso de éxito Cajicá' : 'Success story Cajicá'}
                   className="w-full rounded-xl object-cover aspect-[3/2]"
                   loading="lazy"
                 />

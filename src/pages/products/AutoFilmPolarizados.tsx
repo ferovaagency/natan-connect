@@ -101,15 +101,17 @@ const features = [
   { es: 'Menor deslumbramiento al conducir', en: 'Reduced driving glare' },
   { es: 'Alta resistencia a abrasión y desgaste', en: 'High abrasion and wear resistance' },
   { es: 'Sin distorsiones ópticas', en: 'No optical distortions' },
-  { es: 'Peritaje del vehículo antes de instalar', en: 'Vehicle inspection before installation' },
+  { es: 'Peritaje del vehículo o superficie antes de instalar', en: 'Vehicle or surface inspection before installation' },
+  { es: 'Aplicable a vehículos, apartamentos, edificios, oficinas y locales comerciales', en: 'Applicable to vehicles, apartments, buildings, offices and commercial spaces' },
+  { es: 'Control térmico del 70-80% en ventanales y fachadas', en: '70-80% thermal control on windows and facades' },
 ];
 
 const faqItems = [
   {
     qEs: '¿Cuánto tiempo dura la instalación?',
     qEn: 'How long does installation take?',
-    aEs: 'Dependiendo de la gama y el tipo de vehículo, entre 4 horas y 2 días. Te informamos el tiempo exacto al agendar.',
-    aEn: 'Depending on the tier and vehicle type, between 4 hours and 2 days. We inform you of the exact time when scheduling.',
+    aEs: 'Dependiendo de la gama y el tipo de vehículo o superficie, entre 4 horas y 2 días. Te informamos el tiempo exacto al agendar.',
+    aEn: 'Depending on the tier and vehicle or surface type, between 4 hours and 2 days. We inform you of the exact time when scheduling.',
   },
   {
     qEs: '¿Qué garantía tienen los polarizados?',
@@ -134,6 +136,12 @@ const faqItems = [
     qEn: 'Do you do architectural tinting for entire buildings?',
     aEs: 'Sí. Trabajamos proyectos residenciales, comerciales e industriales en Bogotá y Colombia. Cotización por m².',
     aEn: 'Yes. We work on residential, commercial and industrial projects in Bogotá and Colombia. Quote per m².',
+  },
+  {
+    qEs: '¿Se puede instalar en apartamentos y residencias?',
+    qEn: 'Can it be installed in apartments and residences?',
+    aEs: 'Sí. Instalamos láminas nanocerámicas en ventanas de apartamentos, casas, oficinas y locales comerciales. El polarizado arquitectónico reduce calor, mejora privacidad y protege muebles del deterioro por rayos UV.',
+    aEn: 'Yes. We install nano ceramic films on apartment, house, office and commercial space windows. Architectural tinting reduces heat, improves privacy and protects furniture from UV damage.',
   },
   {
     qEs: '¿Qué pasa si el vidrio ya tiene rayas antes de instalar?',
@@ -164,7 +172,7 @@ const AutoFilmPolarizados = () => {
       <section className="relative min-h-[90vh] flex items-center justify-center px-4">
         <div
           className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=1200)' }}
+          style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1200&q=80)' }}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-[#0F172A]/80 via-[#0F172A]/70 to-[#0F172A]" />
         <div className="relative z-10 text-center max-w-4xl mx-auto">
@@ -174,13 +182,13 @@ const AutoFilmPolarizados = () => {
           </Badge>
           <h1 className="font-heading font-bold text-3xl md:text-5xl lg:text-6xl text-white mb-6 leading-tight animate-on-scroll">
             {isEs
-              ? 'Polarizados Nanocerámicos — Protección real para tu vehículo'
-              : 'Nano Ceramic Window Tinting — Real Protection for Your Vehicle'}
+              ? 'Polarizados Nanocerámicos — Protección real para vehículos, edificios y espacios'
+              : 'Nano Ceramic Tinting — Real Protection for Vehicles, Buildings & Spaces'}
           </h1>
           <p className="text-lg md:text-xl text-slate-300 mb-10 max-w-2xl mx-auto animate-on-scroll">
             {isEs
-              ? 'Tecnología nanocerámica de vanguardia. Garantía ilimitada. Instalación boutique.'
-              : 'Cutting-edge nano ceramic technology. Unlimited warranty. Boutique installation.'}
+              ? 'Tecnología nanocerámica de vanguardia para autos, apartamentos, oficinas, locales comerciales y fachadas. Garantía ilimitada. Instalación boutique.'
+              : 'Cutting-edge nano ceramic technology for cars, apartments, offices, commercial spaces and facades. Unlimited warranty. Boutique installation.'}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center animate-on-scroll">
             <a href={WA_QUOTE} target="_blank" rel="noopener noreferrer">
@@ -200,34 +208,88 @@ const AutoFilmPolarizados = () => {
         </div>
       </section>
 
-      {/* PAIN POINTS */}
+      {/* APPLICATIONS */}
       <section className="py-20 px-4 bg-[#1E293B]">
         <div className="container mx-auto">
+          <h2 className="font-heading font-bold text-2xl md:text-4xl text-white text-center mb-4 animate-on-scroll">
+            {isEs ? 'Soluciones para cada superficie de vidrio' : 'Solutions for every glass surface'}
+          </h2>
+          <p className="text-slate-400 text-center mb-12 max-w-2xl mx-auto animate-on-scroll">
+            {isEs
+              ? 'No solo protegemos vehículos — instalamos polarizado nanocerámico en cualquier superficie de vidrio.'
+              : "We don't just protect vehicles — we install nano ceramic tinting on any glass surface."}
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+            {[
+              {
+                img: 'https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=800&q=80',
+                titleEs: 'Vehículos',
+                titleEn: 'Vehicles',
+                descEs: 'Autos, camionetas, motos — protección UV, calor y privacidad',
+                descEn: 'Cars, SUVs, motorcycles — UV, heat protection and privacy',
+              },
+              {
+                img: 'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=800&q=80',
+                titleEs: 'Apartamentos y Residencias',
+                titleEn: 'Apartments & Residences',
+                descEs: 'Ventanas residenciales con control térmico y privacidad',
+                descEn: 'Residential windows with thermal control and privacy',
+              },
+              {
+                img: 'https://images.unsplash.com/photo-1486325212027-8081e485255e?w=800&q=80',
+                titleEs: 'Edificios y Fachadas',
+                titleEn: 'Buildings & Facades',
+                descEs: 'Ventanales y fachadas con reducción de calor del 70-80%',
+                descEn: 'Windows and facades with 70-80% heat reduction',
+              },
+              {
+                img: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80',
+                titleEs: 'Oficinas y Locales Comerciales',
+                titleEn: 'Offices & Commercial Spaces',
+                descEs: 'Espacios de trabajo con mejor confort térmico y visual',
+                descEn: 'Workspaces with better thermal and visual comfort',
+              },
+            ].map((item, i) => (
+              <div key={i} className="rounded-2xl border border-slate-700/50 bg-slate-800/40 backdrop-blur-sm overflow-hidden transition-all duration-300 hover:border-secondary/50 animate-on-scroll">
+                <img src={item.img} alt={isEs ? item.titleEs : item.titleEn} className="w-full h-40 object-cover" loading="lazy" />
+                <div className="p-5">
+                  <h3 className="font-heading font-bold text-lg text-white mb-2">{isEs ? item.titleEs : item.titleEn}</h3>
+                  <p className="text-slate-400 text-sm">{isEs ? item.descEs : item.descEn}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* PAIN POINTS */}
+      <section className="py-20 px-4">
+        <div className="container mx-auto">
           <h2 className="font-heading font-bold text-2xl md:text-4xl text-white text-center mb-12 animate-on-scroll">
-            {isEs ? 'Tu vehículo sufre más de lo que crees' : 'Your vehicle suffers more than you think'}
+            {isEs ? 'Tus vidrios sufren más de lo que crees' : 'Your glass suffers more than you think'}
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
             {[
               {
                 icon: <Sun className="w-8 h-8" />,
-                titleEs: 'El calor destruye tu interior',
-                titleEn: 'Heat destroys your interior',
-                descEs: 'Los rayos UV e infrarrojos degradan tapicería, plásticos y electrónicos con cada hora de sol.',
-                descEn: 'UV and infrared rays degrade upholstery, plastics and electronics with every hour of sunlight.',
+                titleEs: 'El calor destruye interiores',
+                titleEn: 'Heat destroys interiors',
+                descEs: 'Los rayos UV e infrarrojos degradan tapicería, muebles, pisos y electrónicos en vehículos, hogares y oficinas.',
+                descEn: 'UV and infrared rays degrade upholstery, furniture, floors and electronics in vehicles, homes and offices.',
               },
               {
                 icon: <Eye className="w-8 h-8" />,
-                titleEs: 'Sin privacidad dentro de tu propio carro',
-                titleEn: 'No privacy inside your own car',
-                descEs: 'Cualquiera puede ver tu interior, tus pertenencias y a tus acompañantes desde afuera.',
-                descEn: 'Anyone can see your interior, belongings and passengers from outside.',
+                titleEs: 'Sin privacidad en tus espacios',
+                titleEn: 'No privacy in your spaces',
+                descEs: 'Cualquiera puede ver el interior de tu vehículo, apartamento u oficina desde afuera.',
+                descEn: 'Anyone can see inside your vehicle, apartment or office from outside.',
               },
               {
                 icon: <Shield className="w-8 h-8" />,
                 titleEs: 'Vidrios sin protección ante impactos',
                 titleEn: 'Unprotected glass against impacts',
-                descEs: 'Un vidrio sin lámina se hace añicos al romperse, poniendo en riesgo a todos dentro.',
-                descEn: 'Glass without film shatters when broken, putting everyone inside at risk.',
+                descEs: 'Un vidrio sin lámina se hace añicos al romperse, poniendo en riesgo a todos dentro — en vehículos o edificios.',
+                descEn: 'Glass without film shatters when broken, putting everyone inside at risk — in vehicles or buildings.',
               },
             ].map((item, i) => (
               <div
@@ -248,18 +310,18 @@ const AutoFilmPolarizados = () => {
           </div>
           <p className="text-center text-secondary font-heading font-semibold text-lg animate-on-scroll">
             {isEs
-              ? 'Auto Film tiene la solución nanocerámica exacta para cada necesidad.'
-              : 'Auto Film has the exact nano ceramic solution for every need.'}
+              ? 'Auto Film tiene la solución nanocerámica exacta para cada necesidad — vehículos, hogares, edificios y más.'
+              : 'Auto Film has the exact nano ceramic solution for every need — vehicles, homes, buildings and more.'}
           </p>
         </div>
       </section>
 
       {/* PRICING */}
-      <section id="precios" className="py-20 px-4">
+      <section id="precios" className="py-20 px-4 bg-[#1E293B]">
         <div className="container mx-auto">
-          <div className="flex flex-col sm:flex-row items-center justify-between mb-12 gap-4">
+          <div className="flex flex-col sm:flex-row items-center justify-between mb-4 gap-4">
             <h2 className="font-heading font-bold text-2xl md:text-4xl text-white animate-on-scroll">
-              {isEs ? 'Gamas y Precios' : 'Tiers & Pricing'}
+              {isEs ? 'Gamas y Precios — Vehículos' : 'Tiers & Pricing — Vehicles'}
             </h2>
             <div className="inline-flex rounded-lg border border-slate-700 overflow-hidden animate-on-scroll">
               <button
@@ -280,6 +342,11 @@ const AutoFilmPolarizados = () => {
               </button>
             </div>
           </div>
+          <p className="text-slate-400 mb-12 animate-on-scroll">
+            {isEs
+              ? 'Precios para vehículos particulares. Cotización personalizada para proyectos arquitectónicos, residenciales y comerciales.'
+              : 'Prices for private vehicles. Custom quotes for architectural, residential and commercial projects.'}
+          </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
             {gamas.map((gama, i) => (
@@ -325,20 +392,25 @@ const AutoFilmPolarizados = () => {
               <Building2 className="w-6 h-6 text-secondary" />
               <h3 className="font-heading font-bold text-2xl text-white">
                 {isEs
-                  ? 'Polarizado Arquitectónico para Edificios y Oficinas'
-                  : 'Architectural Window Film for Buildings & Offices'}
+                  ? 'Polarizado Arquitectónico — Edificios, Apartamentos, Oficinas y Locales'
+                  : 'Architectural Tinting — Buildings, Apartments, Offices & Commercial Spaces'}
               </h3>
             </div>
             <p className="text-slate-300 mb-6 leading-relaxed max-w-3xl">
               {isEs
-                ? 'Solución nanocerámica para ventanas de edificios, casas y locales comerciales. Control térmico del 70-80%. Opciones reflectivas, decorativas y antirrobo.'
-                : 'Nano ceramic solution for building, residential and commercial windows. 70-80% thermal control. Reflective, decorative and anti-theft options.'}
+                ? 'Solución nanocerámica para ventanas de edificios, apartamentos, casas, oficinas y locales comerciales. Control térmico del 70-80%. Opciones reflectivas, decorativas y antirrobo. Ideal para cualquier superficie de vidrio.'
+                : 'Nano ceramic solution for building, apartment, house, office and commercial space windows. 70-80% thermal control. Reflective, decorative and anti-theft options. Ideal for any glass surface.'}
             </p>
             <p className="font-heading font-bold text-white text-lg mb-6">
               {isEs
                 ? 'Desde $85.000 hasta $150.000 por m² + IVA'
                 : 'From $20 to $36 per m² + tax'}
             </p>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
+              <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=600&q=80" alt={isEs ? 'Apartamento' : 'Apartment'} className="rounded-xl h-32 w-full object-cover" loading="lazy" />
+              <img src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=600&q=80" alt={isEs ? 'Edificio' : 'Building'} className="rounded-xl h-32 w-full object-cover" loading="lazy" />
+              <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&q=80" alt={isEs ? 'Oficina' : 'Office'} className="rounded-xl h-32 w-full object-cover" loading="lazy" />
+            </div>
             <a href={WA_ARCH} target="_blank" rel="noopener noreferrer">
               <Button className="bg-secondary hover:bg-secondary/90 text-white font-heading gap-2">
                 <MessageCircle className="w-4 h-4" />
@@ -350,7 +422,7 @@ const AutoFilmPolarizados = () => {
       </section>
 
       {/* FEATURES */}
-      <section className="py-20 px-4 bg-[#1E293B]">
+      <section className="py-20 px-4">
         <div className="container mx-auto">
           <h2 className="font-heading font-bold text-2xl md:text-4xl text-white text-center mb-12 animate-on-scroll">
             {isEs ? 'Características clave' : 'Key Features'}
@@ -367,7 +439,7 @@ const AutoFilmPolarizados = () => {
       </section>
 
       {/* TESTIMONIAL */}
-      <section className="py-20 px-4">
+      <section className="py-20 px-4 bg-[#1E293B]">
         <div className="container mx-auto max-w-3xl">
           <div className="rounded-2xl border border-slate-700/50 bg-slate-800/40 backdrop-blur-sm p-8 md:p-12 text-center animate-on-scroll">
             <div className="flex justify-center gap-1 mb-6">
@@ -392,7 +464,7 @@ const AutoFilmPolarizados = () => {
       </section>
 
       {/* FAQ */}
-      <section className="py-20 px-4 bg-[#1E293B]">
+      <section className="py-20 px-4">
         <div className="container mx-auto max-w-3xl">
           <h2 className="font-heading font-bold text-2xl md:text-4xl text-white text-center mb-12 animate-on-scroll">
             {isEs ? 'Preguntas frecuentes' : 'Frequently Asked Questions'}
@@ -420,12 +492,12 @@ const AutoFilmPolarizados = () => {
       <section className="py-20 px-4 bg-gradient-to-r from-secondary to-primary">
         <div className="container mx-auto text-center animate-on-scroll">
           <h2 className="font-heading font-bold text-2xl md:text-4xl text-white mb-4">
-            {isEs ? '¿Listo para proteger tu vehículo?' : 'Ready to protect your vehicle?'}
+            {isEs ? '¿Listo para proteger tus vidrios?' : 'Ready to protect your glass?'}
           </h2>
           <p className="text-white/80 text-lg mb-8 max-w-xl mx-auto">
             {isEs
-              ? 'Agenda tu instalación hoy. Atención en Bogotá, Carrera 53A N° 128C-30.'
-              : 'Schedule your installation today. Located in Bogotá, Carrera 53A N° 128C-30.'}
+              ? 'Vehículos, apartamentos, edificios u oficinas — agenda tu instalación hoy. Atención en Bogotá, Carrera 53A N° 128C-30.'
+              : 'Vehicles, apartments, buildings or offices — schedule your installation today. Located in Bogotá, Carrera 53A N° 128C-30.'}
           </p>
           <a href={`https://wa.me/${WA_NUMBER}`} target="_blank" rel="noopener noreferrer">
             <Button className="bg-white text-primary hover:bg-white/90 font-heading text-lg px-8 py-6 gap-2 mb-8">
