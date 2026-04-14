@@ -18,7 +18,9 @@ export function useLanguage() {
       const routeMap: Record<string, string> = {
         '/': '/en',
         '/servicios': '/en/services',
-        '/productos': '/en/products',
+        '/proyectos': '/en/projects',
+        '/proyectos/polarizados-nanocermicos-autofilm': '/en/projects/nano-ceramic-tinting-autofilm',
+        '/proyectos/arboles-natan': '/en/projects/arboles-natan',
         '/quienes-somos': '/en/about',
         '/contacto': '/en/contact',
         '/admin': '/admin',
@@ -28,7 +30,9 @@ export function useLanguage() {
       const routeMap: Record<string, string> = {
         '/en': '/',
         '/en/services': '/servicios',
-        '/en/products': '/productos',
+        '/en/projects': '/proyectos',
+        '/en/projects/nano-ceramic-tinting-autofilm': '/proyectos/polarizados-nanocermicos-autofilm',
+        '/en/projects/arboles-natan': '/proyectos/arboles-natan',
         '/en/about': '/quienes-somos',
         '/en/contact': '/contacto',
       };
@@ -41,7 +45,7 @@ export function useLanguage() {
       const map: Record<string, string> = {
         '/': '/en',
         '/servicios': '/en/services',
-        '/productos': '/en/products',
+        '/proyectos': '/en/projects',
         '/quienes-somos': '/en/about',
         '/contacto': '/en/contact',
       };
