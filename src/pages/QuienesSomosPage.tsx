@@ -47,7 +47,7 @@ const QuienesSomosPage = () => {
                   <img
                     src={leaderImg}
                     alt={t.about.leader.name}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover text-center"
                     loading="lazy"
                     width={512}
                     height={512}
