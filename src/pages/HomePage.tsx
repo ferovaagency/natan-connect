@@ -4,6 +4,10 @@ import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import { Button } from '@/components/ui/button';
 import { HeartPulse, Cpu, Car, HandHeart, GraduationCap, Plus, TrendingDown, FileWarning, Clock, ArrowRight } from 'lucide-react';
 import heroBg from '@/assets/hero-business.jpg';
+import gallery1 from '@/assets/home-gallery-1.png';
+import gallery2 from '@/assets/home-gallery-2.png';
+import gallery3 from '@/assets/home-gallery-3.png';
+import gallery4 from '@/assets/home-gallery-4.jpeg';
 
 const sectorIcons = [HeartPulse, Cpu, Car, HandHeart, GraduationCap, Plus];
 const painIcons = [TrendingDown, FileWarning, Clock];
@@ -93,23 +97,23 @@ const HomePage = () => {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             <div className="relative rounded-2xl overflow-hidden h-48 md:h-64">
-              <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&q=80"
-                alt="Expansión regional" className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
+              <img src={gallery1}
+                alt="Misión internacional Colombia Grande ABC" className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
               <div className="absolute inset-0 gradient-primary opacity-40" />
             </div>
             <div className="relative rounded-2xl overflow-hidden h-48 md:h-64 md:mt-8">
-              <img src="https://images.unsplash.com/photo-1573164713988-8665fc963095?w=600&q=80"
-                alt="Reunión de negocios" className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
+              <img src={gallery2}
+                alt="Conexión Brasil Colombia Itaú" className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
               <div className="absolute inset-0 gradient-primary opacity-40" />
             </div>
             <div className="relative rounded-2xl overflow-hidden h-48 md:h-64">
-              <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=600&q=80"
-                alt="Latam" className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
+              <img src={gallery3}
+                alt="Reunión de negocios" className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
               <div className="absolute inset-0 gradient-primary opacity-40" />
             </div>
             <div className="relative rounded-2xl overflow-hidden h-48 md:h-64 md:mt-8">
-              <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=600&q=80"
-                alt="Equipo" className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
+              <img src={gallery4}
+                alt="Parque Tecnológico Santo André" className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
               <div className="absolute inset-0 gradient-primary opacity-40" />
             </div>
           </div>
