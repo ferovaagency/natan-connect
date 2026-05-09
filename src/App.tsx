@@ -59,9 +59,6 @@ const App = () => (
             <Route path="/admin" element={<AdminPage />} />
             <Route path="/admin/generador-blogs" element={<GeneradorBlogs />} />
 
-            {/* Admin */}
-            <Route path="/admin" element={<AdminPage />} />
-
             <Route path="*" element={<NotFound />} />
           </Routes>
         </main>
