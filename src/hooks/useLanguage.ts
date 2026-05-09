@@ -23,8 +23,13 @@ export function useLanguage() {
         '/proyectos/arboles-natan': '/en/projects/arboles-natan',
         '/quienes-somos': '/en/about',
         '/contacto': '/en/contact',
+        '/blog': '/en/blog',
         '/admin': '/admin',
       };
+      if (path.startsWith('/blog/')) {
+        navigate('/en' + path);
+        return;
+      }
       navigate(routeMap[path] || '/en');
     } else {
       const routeMap: Record<string, string> = {
@@ -35,7 +40,12 @@ export function useLanguage() {
         '/en/projects/arboles-natan': '/proyectos/arboles-natan',
         '/en/about': '/quienes-somos',
         '/en/contact': '/contacto',
+        '/en/blog': '/blog',
       };
+      if (path.startsWith('/en/blog/')) {
+        navigate(path.replace('/en', ''));
+        return;
+      }
       navigate(routeMap[path] || '/');
     }
   }, [lang, location.pathname, navigate]);
