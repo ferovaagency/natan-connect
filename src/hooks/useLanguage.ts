@@ -48,6 +48,7 @@ export function useLanguage() {
         '/proyectos': '/en/projects',
         '/quienes-somos': '/en/about',
         '/contacto': '/en/contact',
+        '/blog': '/en/blog',
       };
       return map[route] || route;
     }

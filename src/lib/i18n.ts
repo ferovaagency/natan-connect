@@ -244,6 +244,7 @@ export const translations = {
       services: 'Services',
       products: 'Projects',
       about: 'About Us',
+      blog: 'Blog',
       contact: 'Contact',
       cta: 'Schedule Consultation',
     },
