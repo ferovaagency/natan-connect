@@ -1,10 +1,13 @@
 import { useState, useRef, useEffect } from 'react';
 import { useLanguage } from '@/hooks/useLanguage';
 import { MessageSquare, X, Send, Bot } from 'lucide-react';
+import { supabase } from '@/integrations/supabase/client';
+import { trackEvent } from '@/lib/analytics';
 
 interface ChatMessage {
   role: 'user' | 'assistant';
   content: string;
+  whatsapp_url?: string | null;
 }
 
 const AIChatWidget = () => {
@@ -21,27 +24,39 @@ const AIChatWidget = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [messages]);
 
+  useEffect(() => {
+    if (isOpen) trackEvent({ name: 'chat_opened' });
+  }, [isOpen]);
+
   const handleSend = async () => {
     if (!input.trim() || isLoading) return;
 
     const userMessage = input.trim();
     setInput('');
-    setMessages((prev) => [...prev, { role: 'user', content: userMessage }]);
+    const newHistory = [...messages, { role: 'user' as const, content: userMessage }];
+    setMessages(newHistory);
     setIsLoading(true);
+    trackEvent({ name: 'chat_message_sent' });
 
-    // Try to call the edge function, fallback to hardcoded response
     try {
-      const { supabase } = await import('@/lib/supabase');
       const { data, error } = await supabase.functions.invoke('natan-chat', {
-        body: { message: userMessage, history: messages },
+        body: {
+          message: userMessage,
+          history: messages.map((m) => ({ role: m.role, content: m.content })),
+        },
       });
 
-      if (error || !data?.reply) {
-        throw new Error('Function not available');
-      }
+      if (error) throw error;
+      if (!data?.reply) throw new Error('Sin respuesta');
 
-      setMessages((prev) => [...prev, { role: 'assistant', content: data.reply }]);
-    } catch {
+      setMessages((prev) => [
+        ...prev,
+        { role: 'assistant', content: data.reply, whatsapp_url: data.whatsapp_url ?? null },
+      ]);
+
+      if (data.escalate) trackEvent({ name: 'whatsapp_escalated' });
+    } catch (err) {
+      console.error(err);
       setMessages((prev) => [...prev, { role: 'assistant', content: t.chat.fallback }]);
     } finally {
       setIsLoading(false);
