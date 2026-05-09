@@ -7,6 +7,7 @@ export const translations = {
       services: 'Servicios',
       products: 'Proyectos',
       about: 'Quiénes Somos',
+      blog: 'Blog',
       contact: 'Contacto',
       cta: 'Agendar Asesoría',
     },
