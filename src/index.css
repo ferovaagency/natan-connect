@@ -188,3 +188,15 @@
 .animate-float-diamond-fast {
   animation: float-diamond 4s ease-in-out infinite;
 }
+
+/* Blog prose overrides */
+.prose h1 { font-family: 'Montserrat', sans-serif; font-size: 2.25rem; font-weight: 700; margin-top: 2rem; margin-bottom: 1rem; line-height: 1.2; }
+.prose h2 { font-family: 'Montserrat', sans-serif; font-size: 1.75rem; font-weight: 700; margin-top: 2rem; margin-bottom: 0.75rem; line-height: 1.3; color: hsl(var(--primary)); }
+.prose h3 { font-family: 'Montserrat', sans-serif; font-size: 1.375rem; font-weight: 600; margin-top: 1.5rem; margin-bottom: 0.5rem; }
+.prose h4 { font-family: 'Montserrat', sans-serif; font-size: 1.125rem; font-weight: 600; margin-top: 1rem; margin-bottom: 0.5rem; }
+.prose p { margin-bottom: 1rem; line-height: 1.7; font-family: 'Open Sans', sans-serif; }
+.prose ul, .prose ol { margin-bottom: 1rem; padding-left: 1.5rem; }
+.prose li { margin-bottom: 0.5rem; line-height: 1.6; }
+.prose strong { font-weight: 600; }
+.prose blockquote { border-left: 4px solid hsl(var(--secondary)); padding-left: 1rem; font-style: italic; margin: 1.5rem 0; opacity: 0.85; }
+.prose a { color: hsl(var(--secondary)); text-decoration: underline; }
