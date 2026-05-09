@@ -96,9 +96,9 @@ const AIChatWidget = () => {
           {/* Messages */}
           <div className="flex-1 overflow-y-auto p-4 space-y-3 bg-muted/30">
             {messages.map((msg, i) => (
-              <div key={i} className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}>
+              <div key={i} className={`flex flex-col ${msg.role === 'user' ? 'items-end' : 'items-start'}`}>
                 <div
-                  className={`max-w-[80%] px-3 py-2 rounded-lg text-sm font-body ${
+                  className={`max-w-[80%] px-3 py-2 rounded-lg text-sm font-body whitespace-pre-wrap ${
                     msg.role === 'user'
                       ? 'bg-primary text-primary-foreground'
                       : 'bg-card text-card-foreground border border-border'
@@ -106,6 +106,16 @@ const AIChatWidget = () => {
                 >
                   {msg.content}
                 </div>
+                {msg.whatsapp_url && (
+                  <a
+                    href={msg.whatsapp_url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-2 inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#20BD5A] text-white px-3 py-2 rounded-lg text-xs font-heading font-medium transition-colors"
+                  >
+                    💬 Continuar por WhatsApp
+                  </a>
+                )}
               </div>
             ))}
             {isLoading && (
