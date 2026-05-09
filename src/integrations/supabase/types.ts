@@ -14,7 +14,75 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      blogs: {
+        Row: {
+          autor: string | null
+          cierre_html: string
+          contenido_html: string
+          created_at: string
+          fecha_publicacion: string | null
+          frase_inicial: string
+          h1: string
+          id: number
+          imagen_alt: string | null
+          imagen_portada: string | null
+          industria: string
+          keyword_principal: string
+          keywords_secundarias: string[] | null
+          meta_description: string
+          meta_title: string
+          publicado: boolean
+          resumen_intro: string
+          slug: string
+          tipo: string
+          updated_at: string
+        }
+        Insert: {
+          autor?: string | null
+          cierre_html: string
+          contenido_html: string
+          created_at?: string
+          fecha_publicacion?: string | null
+          frase_inicial: string
+          h1: string
+          id?: number
+          imagen_alt?: string | null
+          imagen_portada?: string | null
+          industria: string
+          keyword_principal: string
+          keywords_secundarias?: string[] | null
+          meta_description: string
+          meta_title: string
+          publicado?: boolean
+          resumen_intro: string
+          slug: string
+          tipo?: string
+          updated_at?: string
+        }
+        Update: {
+          autor?: string | null
+          cierre_html?: string
+          contenido_html?: string
+          created_at?: string
+          fecha_publicacion?: string | null
+          frase_inicial?: string
+          h1?: string
+          id?: number
+          imagen_alt?: string | null
+          imagen_portada?: string | null
+          industria?: string
+          keyword_principal?: string
+          keywords_secundarias?: string[] | null
+          meta_description?: string
+          meta_title?: string
+          publicado?: boolean
+          resumen_intro?: string
+          slug?: string
+          tipo?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
