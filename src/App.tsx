@@ -16,6 +16,9 @@ import ArbolesNatan from "@/pages/products/ArbolesNatan";
 import QuienesSomosPage from "@/pages/QuienesSomosPage";
 import ContactoPage from "@/pages/ContactoPage";
 import AdminPage from "@/pages/AdminPage";
+import BlogIndexPage from "@/pages/BlogIndexPage";
+import BlogPostPage from "@/pages/BlogPostPage";
+import GeneradorBlogs from "@/pages/admin/GeneradorBlogs";
 import NotFound from "@/pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -38,6 +41,8 @@ const App = () => (
             <Route path="/proyectos/arboles-natan" element={<ArbolesNatan />} />
             <Route path="/quienes-somos" element={<QuienesSomosPage />} />
             <Route path="/contacto" element={<ContactoPage />} />
+            <Route path="/blog" element={<BlogIndexPage />} />
+            <Route path="/blog/:slug" element={<BlogPostPage />} />
 
             {/* English routes */}
             <Route path="/en" element={<HomePage />} />
@@ -47,6 +52,12 @@ const App = () => (
             <Route path="/en/projects/arboles-natan" element={<ArbolesNatan />} />
             <Route path="/en/about" element={<QuienesSomosPage />} />
             <Route path="/en/contact" element={<ContactoPage />} />
+            <Route path="/en/blog" element={<BlogIndexPage />} />
+            <Route path="/en/blog/:slug" element={<BlogPostPage />} />
+
+            {/* Admin */}
+            <Route path="/admin" element={<AdminPage />} />
+            <Route path="/admin/generador-blogs" element={<GeneradorBlogs />} />
 
             {/* Admin */}
             <Route path="/admin" element={<AdminPage />} />
