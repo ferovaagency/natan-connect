@@ -7,9 +7,11 @@ import { Textarea } from '@/components/ui/textarea';
 import { supabase } from '@/lib/supabase';
 import { Phone, MessageCircle, Mail, CheckCircle } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
+import SEO from '@/components/SEO';
 
 const ContactoPage = () => {
-  const { t } = useLanguage();
+  const { t, lang } = useLanguage();
+
   const { toast } = useToast();
   useScrollAnimation();
   const [loading, setLoading] = useState(false);
@@ -46,8 +48,15 @@ const ContactoPage = () => {
     }
   };
 
+  const path = lang === 'es' ? '/contacto' : '/en/contact';
+  const title = lang === 'es' ? 'Contacto | Natan Commercial Agency' : 'Contact | Natan Commercial Agency';
+  const description = lang === 'es'
+    ? 'Habla con Natan Commercial Agency: agendamos una conversación para evaluar tu expansión a Colombia y Latinoamérica.'
+    : 'Talk to Natan Commercial Agency: schedule a call to evaluate your expansion into Colombia and Latin America.';
+
   return (
     <div className="min-h-screen pt-0 mt-0">
+      <SEO title={title} description={description} path={path} />
       {/* Hero */}
       <section className="py-16 gradient-primary relative overflow-hidden px-0 mt-[64px]">
         <div className="container mx-auto px-4 text-center relative z-10 max-w-3xl">

@@ -88,7 +88,7 @@ const AIChatWidget = () => {
               </div>
               <span className="font-heading font-semibold text-sm">{t.chat.title}</span>
             </div>
-            <button onClick={() => setIsOpen(false)} className="text-primary-foreground/70 hover:text-primary-foreground">
+            <button onClick={() => setIsOpen(false)} aria-label="Cerrar" className="text-primary-foreground/70 hover:text-primary-foreground">
               <X className="w-5 h-5" />
             </button>
           </div>
@@ -142,6 +142,7 @@ const AIChatWidget = () => {
               />
               <button
                 type="submit"
+                aria-label="Enviar"
                 disabled={isLoading || !input.trim()}
                 className="bg-secondary text-secondary-foreground rounded-lg p-2 hover:bg-secondary/90 disabled:opacity-50 transition-colors"
               >

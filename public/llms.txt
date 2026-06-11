@@ -1,0 +1,21 @@
+# Natan Commercial Agency
+
+> B2B intermediation agency connecting North American companies with the Colombian and Latin American markets through feasibility studies, commercial strategy and execution.
+
+## Pages
+
+- [Home](/): Overview of Natan Commercial Agency's services and value proposition.
+- [Services](/servicios): Feasibility studies, commercial strategy, sales planning and commercialization.
+- [Projects](/proyectos): Featured projects and product distributions.
+- [About](/quienes-somos): Leadership, values and methodology.
+- [Contact](/contacto): Contact form and direct channels.
+- [Blog](/blog): Articles on international trade, market expansion and Latin American business.
+
+## English
+
+- [Home (EN)](/en): English version of the homepage.
+- [Services (EN)](/en/services): Services in English.
+- [Projects (EN)](/en/projects): Projects in English.
+- [About (EN)](/en/about): About in English.
+- [Contact (EN)](/en/contact): Contact in English.
+- [Blog (EN)](/en/blog): Blog in English.

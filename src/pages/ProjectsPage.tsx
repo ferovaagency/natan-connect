@@ -4,6 +4,7 @@ import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import { products } from '@/lib/products';
 import { Button } from '@/components/ui/button';
 import { MessageCircle, ArrowRight, Check, TreePine, Car, Snowflake, Shield, Sun, Eye } from 'lucide-react';
+import SEO from '@/components/SEO';
 
 const ProjectsPage = () => {
   const { lang } = useLanguage();
@@ -16,8 +17,16 @@ const ProjectsPage = () => {
     return `/proyectos/${p.slug}`;
   };
 
+  const path = isEs ? '/proyectos' : '/en/projects';
+  const title = isEs ? 'Proyectos | Natan Commercial Agency' : 'Projects | Natan Commercial Agency';
+  const description = isEs
+    ? 'Proyectos y productos representados por Natan Commercial Agency: polarizados nano-cerámicos AutoFilm, Árboles Natan y más.'
+    : 'Projects and products represented by Natan Commercial Agency: AutoFilm nano-ceramic window tinting, Árboles Natan and more.';
+
   return (
     <div className="min-h-screen bg-[#0F172A]">
+      <SEO title={title} description={description} path={path} />
+
       {/* Hero */}
       <section className="relative pt-32 pb-20 px-4 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-primary/20 via-[#0F172A] to-[#0F172A]" />

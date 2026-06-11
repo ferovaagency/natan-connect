@@ -3,15 +3,26 @@ import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { Shield, Heart, Star, Users, Award, Target } from 'lucide-react';
 import leaderImg from '@/assets/leader-portrait.jpg';
+import SEO from '@/components/SEO';
 
 const valueIcons = [Shield, Heart, Star, Users, Award, Target];
 
 const QuienesSomosPage = () => {
-  const { t } = useLanguage();
+  const { t, lang } = useLanguage();
   useScrollAnimation();
+
+  const path = lang === 'es' ? '/quienes-somos' : '/en/about';
+  const title = lang === 'es'
+    ? 'Quiénes Somos | Natan Commercial Agency'
+    : 'About Us | Natan Commercial Agency';
+  const description = lang === 'es'
+    ? 'Conoce al equipo, los valores y la metodología de Natan Commercial Agency, agencia de intermediación comercial entre Norteamérica y Latinoamérica.'
+    : 'Meet the team, values and methodology of Natan Commercial Agency, the commercial intermediation agency between North America and Latin America.';
 
   return (
     <div className="min-h-screen pt-0 mt-0">
+      <SEO title={title} description={description} path={path} />
+
       {/* Hero */}
       <section className="py-24 gradient-primary relative overflow-hidden mt-[54px]">
         <div className="absolute top-10 right-20 w-40 h-40 border border-primary-foreground/5 rotate-45 animate-float-diamond-slow" />
