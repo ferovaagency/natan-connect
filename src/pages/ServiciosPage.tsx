@@ -4,6 +4,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { CheckCircle, Target, BarChart3, Headphones, Clock } from 'lucide-react';
 import servicesHero from '@/assets/services-hero.jpg';
+import SEO from '@/components/SEO';
 
 const diffIcons = [CheckCircle, Target, BarChart3, Headphones];
 
@@ -11,8 +12,36 @@ const ServiciosPage = () => {
   const { t, lang } = useLanguage();
   useScrollAnimation();
 
+  const path = lang === 'es' ? '/servicios' : '/en/services';
+  const title = lang === 'es'
+    ? 'Servicios | Natan Commercial Agency'
+    : 'Services | Natan Commercial Agency';
+  const description = lang === 'es'
+    ? 'Estudios de factibilidad, estrategia comercial, plan comercial y comercialización para expandir tu empresa a Colombia y Latinoamérica.'
+    : 'Feasibility studies, commercial strategy, sales planning and commercialization to expand your company into Colombia and Latin America.';
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: t.services.faq.items.map((item: any) => ({
+      '@type': 'Question',
+      name: item.q,
+      acceptedAnswer: { '@type': 'Answer', text: item.a },
+    })),
+  };
+  const serviceSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    serviceType: 'B2B commercial intermediation',
+    provider: { '@type': 'Organization', name: 'Natan Commercial Agency', url: 'https://natanca.com' },
+    areaServed: ['Colombia', 'Latin America', 'North America'],
+    name: title,
+    description,
+  };
+
   return (
     <div className="min-h-screen pt-0 mt-0">
+      <SEO title={title} description={description} path={path} jsonLd={[faqSchema, serviceSchema]} />
+
       {/* Hero */}
       <section className="py-24 gradient-primary relative overflow-hidden">
         <div className="absolute inset-0">
@@ -32,11 +61,15 @@ const ServiciosPage = () => {
       {/* Timeline Process */}
       <section className="py-24 bg-background">
         <div className="container mx-auto px-4 max-w-3xl">
+          <h2 className="text-foreground text-center mb-12 animate-on-scroll">
+            {lang === 'es' ? 'Nuestro proceso paso a paso' : 'Our step-by-step process'}
+          </h2>
           <div className="relative">
             {/* Vertical line */}
             <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-secondary/30 hidden md:block" />
 
             <div className="space-y-10">
+
               {t.services.steps.map((step, i) => (
                 <div key={i} className="relative flex gap-6 md:gap-10 animate-on-scroll" style={{ transitionDelay: `${i * 0.1}s` }}>
                   <div className="shrink-0 w-16 h-16 rounded-2xl gradient-teal flex items-center justify-center font-heading font-bold text-primary-foreground text-xl relative z-10 shadow-lg">
