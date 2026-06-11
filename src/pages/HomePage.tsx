@@ -12,17 +12,28 @@ import gallery4 from '@/assets/home-gallery-4.jpeg';
 const sectorIcons = [HeartPulse, Cpu, Car, HandHeart, GraduationCap, Plus];
 const painIcons = [TrendingDown, FileWarning, Clock];
 
+import SEO from '@/components/SEO';
+
 const HomePage = () => {
-  const { t, getPath } = useLanguage();
+  const { t, getPath, lang } = useLanguage();
   useScrollAnimation();
+
+  const title = lang === 'es'
+    ? 'Natan Commercial Agency | Expansión a Latinoamérica'
+    : 'Natan Commercial Agency | Expand into Latin America';
+  const description = lang === 'es'
+    ? 'Conectamos empresas norteamericanas con Colombia y Latinoamérica. Estudios de factibilidad, estrategia comercial y resultados.'
+    : 'We connect North American companies with Colombia and Latin America. Feasibility studies, commercial strategy and real results.';
 
   return (
     <div className="min-h-screen">
+      <SEO title={title} description={description} path={lang === 'es' ? '/' : '/en'} />
       {/* Hero */}
+
       <section className="relative min-h-screen flex items-center justify-center gradient-primary overflow-hidden">
         {/* Background image */}
         <div className="absolute inset-0">
-          <img src={heroBg} alt="" className="w-full h-full object-cover opacity-30" width={1920} height={1080} />
+          <img src={heroBg} alt="" className="w-full h-full object-cover opacity-30" width={1920} height={1080} fetchPriority="high" decoding="async" />
         </div>
 
         {/* Floating diamonds */}
