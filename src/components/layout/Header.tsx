@@ -26,11 +26,8 @@ const Header = () => {
   ];
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      scrolled
-        ? 'bg-background/95 backdrop-blur-md shadow-lg border-b border-border/50'
-        : 'bg-dark/80 backdrop-blur-md border-b border-transparent'
-    }`}>
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white shadow-lg border-b border-border/50`}>
+
       <div className="container mx-auto px-4 py-4 flex items-center justify-between mb-0 pb-[16px]">
         <Link to={getPath('/')} className="flex items-center">
           <img 
@@ -46,18 +43,14 @@ const Header = () => {
             <Link
               key={item.path}
               to={getPath(item.path)}
-              className={`text-sm font-heading font-medium nav-link transition-colors ${
-                scrolled ? 'text-foreground/70 hover:text-foreground' : 'text-white/90 hover:text-white'
-              }`}
+              className="text-sm font-heading font-medium nav-link transition-colors text-foreground/70 hover:text-foreground"
             >
               {item.label}
             </Link>
           ))}
           <button
             onClick={toggleLanguage}
-            className={`flex items-center gap-1.5 text-sm font-heading font-medium transition-colors ${
-              scrolled ? 'text-foreground/70 hover:text-foreground' : 'text-white/90 hover:text-white'
-            }`}
+            className="flex items-center gap-1.5 text-sm font-heading font-medium transition-colors text-foreground/70 hover:text-foreground"
           >
             <Globe className="w-4 h-4" />
             {lang === 'es' ? 'EN' : 'ES'}
@@ -73,17 +66,16 @@ const Header = () => {
         <div className="flex items-center gap-3 lg:hidden">
           <button
             onClick={toggleLanguage}
-            className={`flex items-center gap-1 text-sm font-heading transition-colors ${
-              scrolled ? 'text-foreground/70' : 'text-white/90 hover:text-white'
-            }`}
+            className="flex items-center gap-1 text-sm font-heading transition-colors text-foreground/70"
           >
             <Globe className="w-4 h-4" />
             {lang === 'es' ? 'EN' : 'ES'}
           </button>
-          <button onClick={() => setIsOpen(!isOpen)} className={scrolled ? 'text-foreground' : 'text-white'}>
+          <button onClick={() => setIsOpen(!isOpen)} className="text-foreground">
             {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
         </div>
+
       </div>
 
       {/* Mobile Menu */}
