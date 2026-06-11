@@ -30,10 +30,10 @@ const Header = () => {
 
       <div className="container mx-auto px-4 py-4 flex items-center justify-between mb-0 pb-[16px]">
         <Link to={getPath('/')} className="flex items-center">
-          <img 
-            src={logo} 
-            alt="NATAN Commercial Agency" 
-            className="h-10 w-auto"
+          <img
+            src={logo}
+            alt="NATAN Commercial Agency"
+            className="h-14 w-auto"
           />
         </Link>
 
