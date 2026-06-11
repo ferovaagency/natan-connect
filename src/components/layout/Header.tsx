@@ -43,18 +43,14 @@ const Header = () => {
             <Link
               key={item.path}
               to={getPath(item.path)}
-              className={`text-sm font-heading font-medium nav-link transition-colors ${
-                scrolled ? 'text-foreground/70 hover:text-foreground' : 'text-white/90 hover:text-white'
-              }`}
+              className="text-sm font-heading font-medium nav-link transition-colors text-foreground/70 hover:text-foreground"
             >
               {item.label}
             </Link>
           ))}
           <button
             onClick={toggleLanguage}
-            className={`flex items-center gap-1.5 text-sm font-heading font-medium transition-colors ${
-              scrolled ? 'text-foreground/70 hover:text-foreground' : 'text-white/90 hover:text-white'
-            }`}
+            className="flex items-center gap-1.5 text-sm font-heading font-medium transition-colors text-foreground/70 hover:text-foreground"
           >
             <Globe className="w-4 h-4" />
             {lang === 'es' ? 'EN' : 'ES'}
@@ -70,17 +66,16 @@ const Header = () => {
         <div className="flex items-center gap-3 lg:hidden">
           <button
             onClick={toggleLanguage}
-            className={`flex items-center gap-1 text-sm font-heading transition-colors ${
-              scrolled ? 'text-foreground/70' : 'text-white/90 hover:text-white'
-            }`}
+            className="flex items-center gap-1 text-sm font-heading transition-colors text-foreground/70"
           >
             <Globe className="w-4 h-4" />
             {lang === 'es' ? 'EN' : 'ES'}
           </button>
-          <button onClick={() => setIsOpen(!isOpen)} className={scrolled ? 'text-foreground' : 'text-white'}>
+          <button onClick={() => setIsOpen(!isOpen)} className="text-foreground">
             {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
         </div>
+
       </div>
 
       {/* Mobile Menu */}
